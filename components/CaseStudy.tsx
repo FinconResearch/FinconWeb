@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, Calendar, TrendingUp, Target, Phone } from 'lucide-react';
+import {TrendingUp} from 'lucide-react';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import MaxWidthWrapper from './MaxWidth';
 
@@ -24,40 +24,7 @@ const savingsData = [
   { month: 'Month 6', savings: 210000 }
 ];
 
-const metrics = [
-  {
-    title: 'Calls Made',
-    value: '75K+',
-    change: '+7400%',
-    description: 'Monthly outbound calls',
-    icon: Phone,
-    color: '#00FF00'
-  },
-  {
-    title: 'Meetings Booked',
-    value: '1,450',
-    change: '+725%',
-    description: 'Monthly appointments',
-    icon: Calendar,
-    color: '#00DD00'
-  },
-  {
-    title: 'Response Rate',
-    value: '32%',
-    change: '+180%',
-    description: 'Prospect engagement',
-    icon: Target,
-    color: '#00BB00'
-  },
-  {
-    title: 'Cost Savings',
-    value: '$210K',
-    change: '-78%',
-    description: 'In 6 months',
-    icon: DollarSign,
-    color: '#009900'
-  }
-];
+
 
 const comparisonData = [
   { factor: 'Monthly Cost', traditional: '$39,600', ai: '$5,000', savings: '$34,600' },
@@ -85,40 +52,13 @@ export function CaseStudy() {
             See how our financial strategies transformed business outcomes
           </p>
         </motion.div>
-
-        {/* Key Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-electric-blue/10 hover:border-electric-blue/30 transition-all duration-300"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-xl bg-electric-blue/20">
-                  <metric.icon className="w-6 h-6 text-electric-blue" />
-                </div>
-                <span className={`text-sm font-medium ${
-                  metric.change.startsWith('+') ? 'text-electric-blue' : 'text-red-500'
-                }`}>
-                  {metric.change}
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-1 text-black">{metric.value}</h3>
-              <p className="text-black/70 text-sm">{metric.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Charts Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* Growth Chart */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-electric-blue/10"
+            className=" p-6  "
           >
             <h3 className="text-xl font-bold mb-6 text-black">Growth Trajectory</h3>
             <div className="h-[300px]">
@@ -164,10 +104,10 @@ export function CaseStudy() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-electric-blue/10"
+            className="p-6"
           >
             <h3 className="text-xl font-bold mb-6 text-black">Cumulative Savings</h3>
-            <div className="h-[300px]">
+            <div className="h-[300px] ">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={savingsData}>
                   <defs>

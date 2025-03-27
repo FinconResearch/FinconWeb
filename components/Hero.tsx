@@ -27,7 +27,7 @@ export default function Hero() {
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight text-neutral-dark">
+              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight text-black">
                 We are a cutting-edge financial research firm that{' '}
                 <span className="text-electric-blue"><TypewriterText /></span>
                 <br />

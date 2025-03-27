@@ -30,7 +30,7 @@ const contactInfo = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-electric-blue/10 bg-blue-100">
+    <footer className="border-t border-electric-blue/10 bg-blue-950">
     <MaxWidthWrapper maxWidth='2xl'>
 
       <div className="mx-auto px-4">
