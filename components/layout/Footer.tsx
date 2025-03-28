@@ -24,7 +24,7 @@ const socialLinks = [
 
 const contactInfo = [
   { icon: Mail, text: 'contact@gmail.com' },
-  { icon: Phone, text: '+91 9871693409' },
+  { icon: Phone, text: '+91 123456789' },
   { icon: MapPin, text: 'New Delhi' }
 ];
 
