@@ -46,9 +46,6 @@ export default function Hero() {
                 >
                   Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.button>
-                <button className="text-white/80 hover:text-white transition-colors duration-200">
-                  Learn more →
-                </button>
               </div>
             </div>
           </motion.div>

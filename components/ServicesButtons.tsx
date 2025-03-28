@@ -5,44 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-const features = [
-    {
-      iconName: 'Calculator',
-      title: 'Financial Modeling',
-      description: 'We develop detailed financial models using MS Excel and specialized tools for various financial purposes.',
-      benefits: ['Income statements & balance sheets', 'Cash flow projections', 'Key ratio analysis']
-    },
-    {
-      iconName: 'HandshakeIcon',
-      title: 'M&A Deal Support',
-      description: 'End-to-end M&A and fundraising support with thorough business assessment and value driver identification.',
-      benefits: ['Investor connection', 'Deal negotiation', 'Financial due diligence']
-    },
-    {
-      iconName: 'PresentationChart',
-      title: 'Pitch Presentations',
-      description: 'Strategic pitch presentations showcasing credentials and M&A transaction strategies.',
-      benefits: ['Experience highlight', 'Transaction timelines', 'Deal qualification']
-    },
-    {
-      iconName: 'LineChart',
-      title: 'Business Valuation',
-      description: 'Comprehensive valuation models using DCF, Comparable Company Analysis, and SOTP methodologies.',
-      benefits: ['Cash flow projection', 'Industry comparables', 'Multiple analysis']
-    },
-    {
-      iconName: 'BarChart3',
-      title: 'Equity Research',
-      description: 'Detailed equity research reports with coverage initiation and periodic updates.',
-      benefits: ['Financial modeling', 'Industry analysis', 'Investment recommendations']
-    },
-    {
-      iconName: 'Search',
-      title: 'Business Research',
-      description: 'Customized global company research focusing on key metrics and market positioning.',
-      benefits: ['Personnel insights', 'Revenue analysis', 'Competitor tracking']
-    }
-  ];
+
 
 export default function AnimatedCards() {
   const [activeButton, setActiveButton] = useState<number | null>(null)
@@ -90,11 +53,6 @@ export default function AnimatedCards() {
                 <CardHeader>
                   <CardTitle>First Big Card</CardTitle>
                   <CardDescription>
-                    <ul>
-                      {features.map((feature, index) => (
-                        <li key={index}>{feature.description}</li>
-                      ))}
-                    </ul>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -112,7 +70,6 @@ export default function AnimatedCards() {
               <Card className="h-[500px] bg-blue-500 text-white">
                 <CardHeader>
                   <CardTitle>Second Big Card</CardTitle>
-                  <CardDescription>This is the second of two big cards</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="  rounded-md flex items- justify-center">
