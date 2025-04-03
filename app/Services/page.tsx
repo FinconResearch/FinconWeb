@@ -160,7 +160,7 @@ const InvestmentResearchSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0  bg-gradient-to-r from-blue-950/70 to-blue-950/70 mix-blend-multipl" />
         <Image
-          src="/AboutusImage.jpg"
+          src="/AboutUsimage.jpg"
           alt="Investment Background"
           height={800}
           width={800}
