@@ -1,7 +1,7 @@
 
 import Hero from '@/components/Hero';
 import {Footer} from '@/components/layout/Footer';
-import { Features2 } from '@/components/Features';
+import { HeroServices } from '@/components/HeroServices';
 import { CaseStudy } from '@/components/CaseStudy';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <div className="relative z-10">
         <div className="custom-cursor"/>
         <Hero />
-        <Features2 />
+        <HeroServices />
         <CaseStudy />
         <Footer />
       </div>

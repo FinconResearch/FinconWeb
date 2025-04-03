@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
-import {  DollarSign, BarChart2, TrendingUp, Users } from "lucide-react"
+import {  BarChart2, TrendingUp, Users } from "lucide-react"
 
 export default function AboutUs() {
   const heroRef = useRef(null)
@@ -21,8 +21,7 @@ export default function AboutUs() {
   const heroY = useTransform(heroScroll, [0, 0.5], [0, 100])
 
   const decorElements = [
-    { icon: <DollarSign className="h-full w-full" />, top: "10%", left: "5%", size: "60px", delay: 0 },
-    { icon: <BarChart2 className="h-full w-full" />, top: "20%", right: "2%", size: "80px", delay: 0.1 },
+    { icon: <BarChart2 className="h-full w-full hidden md:block" />, top: "23%", right: "2%", size: "80px", delay: 0.1 },
     { icon: <TrendingUp className="h-full w-full" />, bottom: "15%", left: "12%", size: "70px", delay: 0.2 },
     { icon: <Users className="h-full w-full" />, bottom: "25%", right: "15%", size: "65px", delay: 0.3 },
   ]
@@ -89,7 +88,7 @@ export default function AboutUs() {
 
         <div className="container mx-auto max-w-7xl z-10 relative">
           <motion.div
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2  items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -128,7 +127,7 @@ export default function AboutUs() {
             </motion.div>
 
             <motion.div
-              className="  rounded-2xl p-8 bg-white shadow-xl"
+              className="  rounded-2xl p-8 bg-white/80 shadow-xl"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -136,42 +135,24 @@ export default function AboutUs() {
               <AnimatePresence>
                 
                   <motion.div
-                    className="text-black/90 space-y-4 max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar"
+                    className="text-black/90 backdrop-blur-sm space-y-4 max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.5 }}
                   >
                     <p className="leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas laoreet ante, aliquet
-                      pharetra arcu dictum pellentesque. Etiam euismod porta nibh, a consequat leo auctor in. Praesent
-                      porta id massa sit amet rutrum. Morbi non fermentum lorem. Ut rutrum rutrum magna eu condimentum.
-                      Morbi in nunc mauris. Sed a imperdiet mauris. Nullam ac lobortis magna. Sed non vestibulum neque.
-                      Proin efficitur risus non pulvinar imperdiet. Duis est mauris, porttitor et neque non, tristique
-                      dictum eros. Nunc placerat sodales massa interdum fringilla. Etiam ut purus in velit iaculis
-                      tempor sit amet ut sem. Nulla eu consequat lectus. Nam mi magna, tempus vel mauris eget, varius
-                      molestie diam. Nam scelerisque laoreet lobortis.
+                    Finance can be daunting—whether you&apos;re a large bank facing complex regulations or a small business owner juggling daily cash flow. These challenges, both intricate and fundamental, inspired the creation of FinCon Research.
+
                     </p>
                     <p className="leading-relaxed">
-                      Morbi ut aliquam ligula. Etiam aliquam orci ac volutpat luctus. Donec a magna id risus pretium
-                      euismod non vitae turpis. Vivamus molestie augue vitae maximus imperdiet. Duis a lobortis ligula.
-                      Nullam sed mollis massa, at dignissim ante. Aliquam placerat scelerisque risus in varius.
-                      Pellentesque rhoncus ipsum et ligula consequat, id suscipit urna blandit. Pellentesque odio diam,
-                      blandit bibendum commodo id, volutpat ac lacus. Nullam dignissim vel est ac vestibulum.
-                      Pellentesque vehicula lorem ut est dapibus tempus.
+                    Founded on the belief that clear financial understanding should be universal, FinCon Research bridges the gap between the needs of large institutions and small enterprises. Our mission is simple yet impactful: to untangle the complexities of finance and empower businesses of all sizes to thrive.
                     </p>
                     <p className="leading-relaxed">
-                      Etiam mollis suscipit enim quis lacinia. Nullam viverra tempus lectus. Etiam molestie tellus vitae
-                      leo auctor posuere. Duis tempus mauris ornare arcu congue, quis ultricies turpis porta. Integer
-                      varius augue id elit varius, vulputate mollis risus bibendum. Integer condimentum neque ac turpis
-                      viverra, in molestie nisi laoreet. Vestibulum erat arcu, dignissim a nulla in, porta pulvinar
-                      lectus. Nunc turpis dui, semper bibendum feugiat non, dapibus eu metus. Pellentesque ut ligula
-                      dictum, ornare tortor vitae, viverra quam. Ut feugiat viverra nulla, ut volutpat metus dapibus
-                      cursus.
+                    To serve this vision, FinCon Research established two core divisions.The <span className="font-bold">Capabilities Centre</span> The  caters to banks, asset managers, and financial institutions. We deliver deep market research, build precise valuation models, and offer comprehensive investment analytics—all at a fraction of the cost of hiring a full-time employee. These services equip clients with the clarity and tools needed to make sound, data-driven decisions.
                     </p>
                     <p className="leading-relaxed">
-                      In bibendum feugiat aliquet. Etiam augue erat, aliquam ac facilisis ut, aliquet vel tellus. Donec
-                      semper odio vitae lacus posuere, id bibendum turpis ultricies. Integer vitae posuere metus, et
+                    For small and medium businesses, our SME advisory services offer tailored financial consultancy. Custom dashboards help owners track metrics, manage financial data, and identify growth opportunities—all without the expense of a full-time CFO. This hands-on support helps SMEs gain control and confidently plan for the future.
                     </p>
                   </motion.div>
                 
