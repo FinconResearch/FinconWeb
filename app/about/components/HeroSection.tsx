@@ -99,17 +99,12 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
             >
               <p className="leading-relaxed">
-                Finance can be daunting—whether you&apos;re a large bank facing complex regulations or a small business owner juggling daily cash flow. These challenges, both intricate and fundamental, inspired the creation of FinCon Research.
+              We are not just a service provider. We are a financial partner committed to the long term. Whether it is streamlining investment workflows or empowering entrepreneurs, FinCon Research is here to make finance work for everyone. Whether you&apos;re a large bank navigating complex regulations or a small business owner managing daily cash flow, financial challenges can be both intricate and fundamental. These realities inspired the creation of FinCon Research.
               </p>
               <p className="leading-relaxed">
-                Founded on the belief that clear financial understanding should be universal, FinCon Research bridges the gap between the needs of large institutions and small enterprises. Our mission is simple yet impactful: to untangle the complexities of finance and empower businesses of all sizes to thrive.
+              Founded on the belief that financial clarity should be accessible to all, FinCon Research bridges the gap between the needs of large institutions and growing enterprises. Our mission is simple and powerful. We aim to untangle the complexities of finance and empower businesses of all sizes to thrive.
               </p>
-              <p className="leading-relaxed">
-                To serve this vision, FinCon Research established two core divisions. The <span className="font-bold">Capabilities Centre</span> caters to banks, asset managers, and financial institutions. We deliver deep market research, build precise valuation models, and offer comprehensive investment analytics—all at a fraction of the cost of hiring a full-time employee. These services equip clients with the clarity and tools needed to make sound, data-driven decisions.
-              </p>
-              <p className="leading-relaxed">
-                For small and medium businesses, our SME advisory services offer tailored financial consultancy. Custom dashboards help owners track metrics, manage financial data, and identify growth opportunities—all without the expense of a full-time CFO. This hands-on support helps SMEs gain control and confidently plan for the future.
-              </p>
+              
             </motion.div>
           </motion.div>
         </motion.div>

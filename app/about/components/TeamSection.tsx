@@ -62,8 +62,8 @@ export default function TeamSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.8 }}
             >
-              To be recognized as the most trusted partner in wealth management, setting new standards in financial
-              services.
+              We are a team of builders. Entrepreneurial, driven, and grounded in real-world problem solving. While we may be early in our journey, we bring with us the energy of a startup and the mindset of long-term partners.
+
             </motion.p>
 
             <motion.div
