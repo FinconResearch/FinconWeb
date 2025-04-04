@@ -12,7 +12,7 @@ const InvestmentResearchSection = () => {
         transition={{ duration: 0.8 }}
         className="mb-20 relative rounded-3xl overflow-hidden"
       >
-        {/* Background Image - Replace with your local image path */}
+        
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0  bg-gradient-to-r from-blue-950/70 to-blue-950/70 mix-blend-multipl" />
           <Image
@@ -26,7 +26,7 @@ const InvestmentResearchSection = () => {
   
         <div className="relative z-20 py-20 px-6 md:px-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Just the heading */}
+            {/* Left Side */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ const InvestmentResearchSection = () => {
               </div>
             </motion.div>
   
-            {/* Right Side - About Content */}
+            {/* Right Side*/}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}

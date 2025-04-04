@@ -89,7 +89,7 @@ const ServiceCard = ({
               <div className="pt-4 border-t h-auto border-gray-200 mt-2">
                 <div className="rounded-xl overflow-hidden mb-4 bg-gray-100">
                   <Image
-                    src={service.imageUrl || "/placeholder.svg"}
+                    src={service.imageUrl || "/logo.svg"}
                     alt={service.title}
                     width={400}
                     height={225}

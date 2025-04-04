@@ -19,12 +19,12 @@ import {
   }
   
 const serviceImages = {
-  marketAnalysis: "/AboutusImage.jpg",
-  portfolioManagement: "/AboutusImage.jpg",
-  wealthPlanning: "/AboutusImage.jpg",
-  investmentAdvisory: "/AboutusImage.jpg",
-  performanceTracking: "/AboutusImage.jpg",
-  riskAssessment: "/AboutusImage.jpg",
+  marketAnalysis: "/AboutUsimage.jpg",
+  portfolioManagement: "/AboutUsimage.jpg",
+  wealthPlanning: "/AboutUsimage.jpg",
+  investmentAdvisory: "/AboutUsimage.jpg",
+  performanceTracking: "/AboutUsimage.jpg",
+  riskAssessment: "/AboutUsimage.jpg",
 };
 
 const investmentServices: Service[] = [
