@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 
@@ -18,6 +19,16 @@ const ServiceSection = ({
   title: string;
   services: Service[];
 }) => {
+  const [expandedStates, setExpandedStates] = useState<boolean[]>(
+    Array(services.length).fill(false)
+  );
+
+  const toggleCard = (index: number) => {
+    setExpandedStates((prevStates) =>
+      prevStates.map((state, i) => (i === index ? !state : state))
+    );
+  };
+
   return (
     <div className="mb-20 text-left">
       <motion.div
@@ -48,9 +59,15 @@ const ServiceSection = ({
         />
       </motion.div>
 
-      <div className="grid grid-cols-1 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} service={service} index={index} />
+          <ServiceCard
+            key={service.title}
+            service={service}
+            index={index}
+            isExpanded={expandedStates[index]}
+            toggleCard={() => toggleCard(index)}
+          />
         ))}
       </div>
     </div>

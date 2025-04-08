@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronUp, ChevronDown } from "lucide-react";
@@ -17,16 +16,14 @@ interface Service {
 const ServiceCard = ({
   service,
   index,
+  isExpanded,
+  toggleCard,
 }: {
   service: Service;
   index: number;
+  isExpanded: boolean;
+  toggleCard: () => void;
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleCard = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -36,7 +33,7 @@ const ServiceCard = ({
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md hover:shadow-xl p-6 relative group transition-all duration-300 overflow-hidden border border-gray-100 ${
+      className={`bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md hover:shadow-xl p-6 relative group transition-all duration-300 overflow-hidden border border-gray-100 min-h-[280px] ${
         isExpanded ? "mb-8" : ""
       }`}
     >
@@ -46,7 +43,7 @@ const ServiceCard = ({
         whileHover={{ scale: 1 }}
         transition={{ duration: 0.3 }}
       />
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 h-full flex flex-col justify-between">
         <div className="mb-5">
           <motion.div
             initial={{ scale: 0.8 }}
