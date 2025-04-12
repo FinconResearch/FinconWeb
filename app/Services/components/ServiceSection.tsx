@@ -30,7 +30,7 @@ const ServiceSection = ({
   };
 
   return (
-    <div className="mb-20 text-left">
+    <div id="our-offering" className="mb-20 text-left">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

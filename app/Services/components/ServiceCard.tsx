@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ChevronUp, ChevronDown } from "lucide-react";
-import Image from "next/image";
+import type React from "react"
+
+import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ChevronUp, ChevronDown } from "lucide-react"
 
 interface Service {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  expandedDescription: string;
-  imageUrl: string;
+  icon: React.ReactNode
+  title: string
+  description: string
+  expandedDescription: string
 }
 
 const ServiceCard = ({
@@ -19,10 +19,10 @@ const ServiceCard = ({
   isExpanded,
   toggleCard,
 }: {
-  service: Service;
-  index: number;
-  isExpanded: boolean;
-  toggleCard: () => void;
+  service: Service
+  index: number
+  isExpanded: boolean
+  toggleCard: () => void
 }) => {
   return (
     <motion.div
@@ -74,33 +74,37 @@ const ServiceCard = ({
           </div>
         </div>
 
-        {isExpanded && (
-          <AnimatePresence>
+        <AnimatePresence>
+          {isExpanded && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              animate={{
+                opacity: 1,
+                height: "auto",
+                transition: {
+                  height: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] },
+                  opacity: { duration: 0.3, ease: "easeInOut" },
+                },
+              }}
+              exit={{
+                opacity: 0,
+                height: 0,
+                transition: {
+                  height: { duration: 0.4, ease: [0.33, 0.1, 0.79, 1] },
+                  opacity: { duration: 0.2, ease: "easeOut" },
+                },
+              }}
               className="overflow-hidden mt-4"
             >
               <div className="pt-4 border-t h-auto border-gray-200 mt-2">
-                <div className="rounded-xl overflow-hidden mb-4 bg-gray-100">
-                  <Image
-                    src={service.imageUrl || "/logo.svg"}
-                    alt={service.title}
-                    width={400}
-                    height={225}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
                 <p className="text-gray-700">{service.expandedDescription}</p>
               </div>
             </motion.div>
-          </AnimatePresence>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

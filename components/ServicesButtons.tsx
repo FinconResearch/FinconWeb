@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import {
   LineChart,
@@ -25,47 +24,69 @@ interface Service {
 const investmentServices: Service[] = [
   {
     icon: <LineChart className="w-6 h-6" />,
-    title: "Market Analysis",
-    description: "Comprehensive market research and trend analysis for informed investment decisions.",
+    title: "FULL TIME ANALYST",
+    description: "Our full-time analysts work as part of extended client team. In an FTE engagement, our analysts work exclusively for the client on a full-time basis and give continuous support, helping clients to control and prioritize projects better.",
   },
   {
     icon: <PieChart className="w-6 h-6" />,
-    title: "Portfolio Management",
-    description: "Strategic portfolio diversification and risk management services.",
+    title: "INFORMATION MEMOS (CIMs)",
+    description: "We prepare highly impactful Confidential Information Memorandums (CIMs) to help businesses and investment banks effectively present investment opportunities to potential investors and suitors..",
   },
   {
     icon: <Wallet className="w-6 h-6" />,
-    title: "Wealth Planning",
-    description: "Personalized wealth management and investment strategies.",
+    title: "FINANCIAL MODELING",
+    description: "We prepare detailed financial models in both, MS Excel and Modano®, for investment banks, PE funds, Startups and Corporations. These financial models are of various type, depending on their end use.",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "Investment Advisory",
-    description: "Expert guidance on investment opportunities and market timing.",
+    title: "M&A DEAL SUPPORT",
+    description: "We provide end-to-end M&A and fund-raising support to startups, corporations and investment banks. Our transaction support process starts with a detailed assessment of the client business, including key value drivers, growth potential and financial details.",
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    title: "Performance Tracking",
-    description: "Real-time monitoring and reporting of investment performance.",
+    title: "PITCH BOOKS",
+    description: "We prepare highly impactful pitch presentations, with several graphs, charts, tables, and other visually appealing infographics. Our pitch books are used by investment banks while making pitch presentations to potential clients for advising them on M&A transactions.",
   },
   {
     icon: <BadgeDollarSign className="w-6 h-6" />,
-    title: "Risk Assessment",
-    description: "Detailed risk analysis and mitigation strategies for investments.",
+    title: "BUSINESS VALUATION",
+    description: "We prepare intricate business valuation models using a combination of the commonly used valuation methodologies.  These include DCF Valuation, Comparable Company Valuation (both listed and transaction comparables), and Sum of The Parts (SOTP) Valuation.",
+  },
+  
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "EQUITY RESEARCH",
+    description: "We provide full Equity Research reports including coverage initiation reports and periodic updates. Our reports are research intensive with in-depth analysis aiding portfolio managers in the investment process.",
+  },
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "INDUSTRY RESEARCH",
+    description: "We have a group of experienced industry analysts, who carry out in-depth research on a broad spectrum of industries, including some industries that are not very widely covered. We primarily rely on secondary resources for our industry research.",
+  },
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "BUSINESS RESEARCH",
+    description: "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
   },
 ]
 
 const cfoServices: Service[] = [
   {
     icon: <Building2 className="w-6 h-6" />,
-    title: "Financial Strategy",
-    description: "Strategic financial planning and execution for SMEs.",
+    title: "EQUITY RESEARCH",
+    description: "We provide full Equity Research reports including coverage initiation reports and periodic updates. Our reports are research intensive with in-depth analysis aiding portfolio managers in the investment process.",
   },
   {
     icon: <Calculator className="w-6 h-6" />,
-    title: "Budgeting & Forecasting",
-    description: "Comprehensive budgeting and financial forecasting services.",
+    title: "INDUSTRY RESEARCH",
+    description: "We have a group of experienced industry analysts, who carry out in-depth research on a broad spectrum of industries, including some industries that are not very widely covered. We primarily rely on secondary resources for our industry research.",
   },
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "BUSINESS RESEARCH",
+    description: "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
+  },
+  
 ]
 
 const ServiceItem = ({
@@ -79,18 +100,7 @@ const ServiceItem = ({
   isActive: boolean
   onClick: () => void
 }) => {
-  const [expanded, setExpanded] = useState(false)
 
-  const detailedContent = {
-    "Market Analysis": "Detailed insights into market trends, helping you make informed decisions.",
-    "Portfolio Management": "Customized strategies to diversify and manage your portfolio effectively.",
-    "Wealth Planning": "Tailored plans to grow and secure your wealth for the future.",
-    "Investment Advisory": "Expert advice on investment opportunities and market timing.",
-    "Performance Tracking": "Real-time tracking and analysis of your investment performance.",
-    "Risk Assessment": "Comprehensive risk evaluation to safeguard your investments.",
-    "Financial Strategy": "Strategic financial planning to drive business growth.",
-    "Budgeting & Forecasting": "Accurate budgeting and forecasting to manage finances effectively.",
-  }
 
   return (
     <motion.div
@@ -132,32 +142,13 @@ const ServiceItem = ({
           >
             <div className="p-6 pt-0">
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <Button
-                variant="outline"
-                className="group border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                onClick={() => setExpanded(!expanded)}
+              <a
+                href="/Services"
+                className="group border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md inline-flex items-center"
               >
-                {expanded ? "Show Less" : "Learn More"}
-                <ChevronRight
-                  className={cn(
-                    "ml-2 w-4 h-4 transition-transform duration-300",
-                    expanded ? "rotate-90" : "rotate-0",
-                  )}
-                />
-              </Button>
-              <AnimatePresence>
-                {expanded && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-4 text-gray-600"
-                  >
-                    {detailedContent[service.title as keyof typeof detailedContent] || "Additional details about this service."}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                Know More
+                <ChevronRight className="ml-2 w-4 h-4" />
+              </a>
             </div>
           </motion.div>
         )}

@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 import { Users } from "lucide-react"
 
 export default function TeamSection() {
@@ -15,7 +14,7 @@ export default function TeamSection() {
     >
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
 
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="relative z-10"> {/* Removed container class for full width */}
         <motion.div
           className="text-center mb-16"
           initial={{ y: 50, opacity: 0 }}
@@ -36,22 +35,11 @@ export default function TeamSection() {
           <div className="h-1 w-24 bg-blue-950 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-1 gap-12 items-center"> {/* Changed to single column */}
           <motion.div
-            className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Image src="/AboutUsimage.jpg?height=1000&width=800" alt="Our team" fill className="object-cover" />
-            <div className="absolute inset-0 "></div>
-          </motion.div>
-
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-blue-950 shadow-xl"
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-blue-950 shadow-xl mx-auto max-w-4xl"
+            initial={{ x: 0, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
