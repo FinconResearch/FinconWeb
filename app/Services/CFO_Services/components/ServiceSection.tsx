@@ -9,7 +9,6 @@ interface Service {
   title: string;
   description: string;
   expandedDescription: string;
-  imageUrl: string;
 }
 
 const ServiceSection = ({

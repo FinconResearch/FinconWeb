@@ -6,7 +6,7 @@ export function TypewriterText() {
   const [displayText, setDisplayText] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const words = useMemo(() => ['Delivers', 'Creates', 'Transforms'], []);
+  const words = useMemo(() => ['Delivers', 'Provides', 'Offers'], []);
   const typingSpeed = 150;
   const deletingSpeed = 100;
   const pauseTime = 2000;

@@ -53,9 +53,8 @@ function Navbar({ className }: { className?: string }) {
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Services" className="text-neutral-800">
               <div className="flex flex-col space-y-4 text-sm text-neutral-800">
-                <HoveredLink href="/Services">Investment Services</HoveredLink>
-                <HoveredLink href="/Services">CFO Series</HoveredLink>
-                <HoveredLink href="/Services">Qualitative Research</HoveredLink>
+                <HoveredLink href="/Services/Investment_Services">Investment Services</HoveredLink>
+                <HoveredLink href="/Services/CFO_Services">CFO Series</HoveredLink>
               </div>
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Blogs" className="text-neutral-800">

@@ -4,6 +4,8 @@ import ServiceSection from "./components/ServiceSection";
 import InvestmentResearchSection from "./components/InvestmentResearchSection";
 import investmentServices from "./data/investmentServices";
 import Heading from "./components/Heading";
+import { CaseStudy } from "./components/CaseStudy";
+import InfiniteScroll from "../ui/InfiniteScroll";
 
 export default function ServicesSection() {
   return (
@@ -13,7 +15,9 @@ export default function ServicesSection() {
       <div className="containe mt-20 mx-auto px-0 relative z-10">
         <Heading />
         <InvestmentResearchSection />
+        <InfiniteScroll/>
         <ServiceSection title="Our Offering" services={investmentServices} />
+        <CaseStudy/>
       </div>
     </div>
   );

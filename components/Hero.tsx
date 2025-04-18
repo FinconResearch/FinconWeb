@@ -32,7 +32,7 @@ export default function Hero() {
                     <TypewriterText />
                   </span>
                   <br />
-                  business intelligence solutions that enhance revenues.
+                  business intelligence solutions that enhance revenues/profits.
                 </h1>
 
                 <p className="text-lg text-neutral-dark/80 max-w-2xl leading-relaxed">

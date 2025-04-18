@@ -2,7 +2,8 @@
 import Hero from '@/components/Hero';
 import {Footer} from '@/components/layout/Footer';
 import { HeroServices } from '@/components/HeroServices';
-import { CaseStudy } from '@/components/CaseStudy';
+import  Salary  from '@/components/Salary';
+
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         <div className="custom-cursor"/>
         <Hero />
         <HeroServices />
-        <CaseStudy />
+        <Salary/>
         <Footer />
       </div>
     </div>

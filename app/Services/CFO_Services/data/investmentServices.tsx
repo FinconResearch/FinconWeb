@@ -11,7 +11,7 @@ interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
-  expandedDescription: React.ReactNode;
+  expandedDescription: string;
 }
 
 const investmentServices: Service[] = [
@@ -20,38 +20,32 @@ const investmentServices: Service[] = [
     title: "FULL TIME ANALYST",
     description:
       "Our full-time analysts work as part of extended client team. In an FTE engagement, our analysts work exclusively for the client on a full-time basis and give continuous support, helping clients to control and prioritize projects better.",
-    expandedDescription: (
-      <p>
-        <p className="mb-4">
+    expandedDescription: `
+
           Full time analyst provides flexibility to the client with quick
           turnaround times, especially when there are frequent and ad hoc work
           requirements. Our analysts are equipped with multiple skillsets and
           can be utilized for various work requirements in the finance domain.
-        </p>
-        <p>
+
           Full time analyst can be hired on a monthly, quarterly or annual basis
           allowing clients to scale their business without making long-term
           investments.
-        </p>
-      </p>
-    ),
+        `,
   },
   {
     icon: <PieChart className="w-6 h-6" />,
     title: "INFORMATION MEMOS (CIMs)",
     description:
       "We prepare highly impactful Confidential Information Memorandums (CIMs) to help businesses and investment banks effectively present investment opportunities to potential investors and suitors.",
-    expandedDescription: (
-      <p>
-        <p>
+    expandedDescription: `
+      
           CIMs include information on several aspects of the business, including
           basic description, operational details, Sales & Marketing information,
           financial information and Management & Team information. We prepare
           CIMs in presentation- or document-style and our CIMs have several
           graphs, charts, tables, and other visually appealing infographics.
-        </p>
-      </p>
-    ),
+        
+    `,
   },
   {
     icon: <Wallet className="w-6 h-6" />,
