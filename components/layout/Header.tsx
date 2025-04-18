@@ -225,14 +225,14 @@ function Navbar({ className }: { className?: string }) {
                         >
                           <div className="pl-4 py-2 space-y-3 border-l-2 border-blue-500 ml-2 my-2">
                             <Link
-                              href="/Services"
+                              href="/Services/Investment_Services"
                               className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               Investment Services
                             </Link>
                             <Link
-                              href="/Services"
+                              href="/Services/CFO_Services"
                               className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >

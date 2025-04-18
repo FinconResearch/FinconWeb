@@ -23,6 +23,7 @@ function useInView(ref: React.RefObject<Element | null>, threshold = 0.1) {
   useEffect(() => {
     if (!ref.current) return
 
+    const currentRef = ref.current; // Copy ref.current to a variable
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting)
@@ -30,12 +31,10 @@ function useInView(ref: React.RefObject<Element | null>, threshold = 0.1) {
       { threshold },
     )
 
-    observer.observe(ref.current)
+    observer.observe(currentRef)
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
+      observer.unobserve(currentRef) // Use the copied variable here
     }
   }, [ref, threshold])
 
@@ -109,14 +108,14 @@ export function Graphs() {
   ], [])
 
   // Data for the area chart
-  const costOverTimeData = [
+  const costOverTimeData = useMemo(() => [
     { month: "Month 1", inHouse: 50000, withYou: 30000 },
     { month: "Month 2", inHouse: 65000, withYou: 32500 },
     { month: "Month 3", inHouse: 80000, withYou: 35000 },
     { month: "Month 4", inHouse: 95000, withYou: 37500 },
     { month: "Month 5", inHouse: 110000, withYou: 40000 },
     { month: "Month 6", inHouse: 120000, withYou: 42500 },
-  ]
+  ], [])
 
   // Animation states for chart data
   const [barChartData, setBarChartData] = useState<{ name: string; withoutFirm: number; withFirm: number; improvement: string }[]>([])
@@ -145,7 +144,7 @@ export function Graphs() {
       return () => clearTimeout(timer)
     }
     return () => {}
-  }, [isAreaChartInView])
+  }, [isAreaChartInView, costOverTimeData])
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
