@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import {Footer} from '@/components/layout/Footer';
 import { HeroServices } from '@/components/HeroServices';
 import  Salary  from '@/components/Salary';
+import EfficiencyMetricsGraph from './components/EfficiencyMetricsGraph';
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <div className="custom-cursor"/>
         <Hero />
         <HeroServices />
+        <EfficiencyMetricsGraph/>
         <Salary/>
         <Footer />
       </div>

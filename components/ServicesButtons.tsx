@@ -143,7 +143,7 @@ const ServiceItem = ({
             <div className="p-6 pt-0">
               <p className="text-gray-600 mb-4">{service.description}</p>
               <a
-                href="/Services"
+                href="/Services/Investment_Services"
                 className="group border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md inline-flex items-center"
               >
                 Know More

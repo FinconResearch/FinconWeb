@@ -17,7 +17,7 @@ import {
 import { motion } from "framer-motion"
 
 // Custom hook to detect when an element is in viewport
-function useInView(ref: React.RefObject<Element | null>, threshold = 0.1) {
+export function useInView(ref: React.RefObject<Element | null>, threshold = 0.1) {
   const [isInView, setIsInView] = useState(false)
 
   useEffect(() => {
