@@ -43,22 +43,22 @@ export default function ValuesSection() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-navy-900/5 rounded-bl-full"></div>
 
             <motion.span
-              className="text-xl md:text-2xl text-navy-800 leading-relaxed relative z-10"
+              className="text-xl md:text-2xl text-left text-navy-800 leading-relaxed relative z-10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <p className="text-3xl font-bold mb-2">Built on Trust</p>
+              <p className="text-3xl font-bold mb-8">Built on Trust</p>
               <p className="mb-8">We don&apos;t chase transactions; we build enduring partnerships. Trust is our currency, and we earn it every day.</p>
 
-              <p className="text-3xl font-bold mb-2">Driven by Integrity</p>
+              <p className="text-3xl font-bold pt-4 mb-8">Driven by Integrity</p>
               <p className="mb-8">Doing the right thing isn&apos;t a choice; it&apos;s our core operating system. We hold ourselves to the highest ethical standards, always.</p>
 
-              <p className="text-3xl font-bold mb-2">Entrepreneurial at Heart</p>
+              <p className="text-3xl font-bold pt-4 mb-8">Entrepreneurial at Heart</p>
               <p className="mb-8">We move fast, think bold, and take ownership like founders. Every challenge is an opportunity to create value.</p>
 
-              <p className="text-3xl font-bold mb-2">Growth, Together</p>
+              <p className="text-3xl font-bold pt-4 mb-8">Growth, Together</p>
               <p>Our success is tied to yours. We align incentives, act as an extension of your team, and scale impact side by side.</p>
             </motion.span>
 

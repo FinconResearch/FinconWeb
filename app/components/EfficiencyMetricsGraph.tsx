@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { useInView } from "../Services/Investment_Services/components/Graphs"; // Reuse the custom hook
+import { useInView } from "../Services/Investment_Services/components/Graphs"
 
 export default function EfficiencyMetricsGraph() {
   const efficiencyData = useMemo(() => [

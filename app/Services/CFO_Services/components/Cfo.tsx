@@ -46,7 +46,7 @@ const InvestmentResearchSection = () => {
                   transition={{ delay: 0.4, duration: 0.5 }}
                   className="text-3xl font-bold text-white mb-4"
                 >
-                  Investment and Research Services
+                  CFO Services
                 </motion.h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -55,12 +55,7 @@ const InvestmentResearchSection = () => {
                   className="h-1 bg-white mb-6"
                 />
                 <p className="text-gray-200 mb-6">
-                  Our comprehensive investment and research services are designed to provide you with the insights and
-                  strategies needed to navigate complex financial markets and achieve your long-term financial goals.
-                </p>
-                <p className="text-gray-200">
-                  With a team of experienced analysts and advisors, we deliver data-driven research and personalized
-                  investment solutions that help you make informed decisions in an ever-changing financial landscape.
+                FinCon Research empowers entrepreneurs and professionals to achieve financial freedom through strategic CFO services. We offer Wealth Mapping, Dashboards, Investment Summaries, and Tax Planning to boost returns and reduce risk. Many business owners reinvest heavily and face high taxes, limiting personal growth. We help break this cycle with smart tax strategies, wealth structuring, and diversification guidance. Our mission is to turn paper wealth into real wealth, providing lasting financial clarity, flexibility, and growth beyond the business.
                 </p>
   
                 <motion.div

@@ -4,6 +4,7 @@ import {Footer} from '@/components/layout/Footer';
 import { HeroServices } from '@/components/HeroServices';
 import  Salary  from '@/components/Salary';
 import EfficiencyMetricsGraph from './components/EfficiencyMetricsGraph';
+import ContactPage from '@/components/ContactForm';
 
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <HeroServices />
         <EfficiencyMetricsGraph/>
         <Salary/>
+        <ContactPage/>
         <Footer />
       </div>
     </div>

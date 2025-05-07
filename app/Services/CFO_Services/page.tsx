@@ -1,10 +1,10 @@
 "use client";
 
 import ServiceSection from "./components/ServiceSection";
-import InvestmentResearchSection from "./components/InvestmentResearchSection";
+import InvestmentResearchSection from "./components/Cfo";
 import investmentServices from "./data/investmentServices";
 import Heading from "./components/Heading";
-import { CaseStudy } from "./components/CaseStudy";
+import ImageSlider from "./components/ImageSlider";
 
 export default function ServicesSection() {
   return (
@@ -15,7 +15,7 @@ export default function ServicesSection() {
         <Heading />
         <InvestmentResearchSection />
         <ServiceSection title="Our Offering" services={investmentServices} />
-        <CaseStudy/>
+        <ImageSlider/>
       </div>
     </div>
   );
