@@ -37,7 +37,7 @@ export default function TeamSection() {
 
         <div className="grid md:grid-cols-1 gap-12 items-center"> {/* Changed to single column */}
           <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-blue-950 shadow-xl mx-auto max-w-4xl"
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-blue-600 shadow-xl mx-auto max-w-4xl"
             initial={{ x: 0, opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

@@ -6,8 +6,6 @@ import {
   PieChart,
   Wallet,
   Users,
-  TrendingUp,
-  BadgeDollarSign,
   Building2,
   Calculator,
   Plus,
@@ -24,66 +22,45 @@ interface Service {
 const investmentServices: Service[] = [
   {
     icon: <LineChart className="w-6 h-6" />,
-    title: "FULL TIME ANALYST",
+    title: "Deal Sourcing",
     description: "Our full-time analysts work as part of extended client team. In an FTE engagement, our analysts work exclusively for the client on a full-time basis and give continuous support, helping clients to control and prioritize projects better.",
   },
   {
     icon: <PieChart className="w-6 h-6" />,
-    title: "INFORMATION MEMOS (CIMs)",
+    title: "Modeling Analysis",
     description: "We prepare highly impactful Confidential Information Memorandums (CIMs) to help businesses and investment banks effectively present investment opportunities to potential investors and suitors..",
   },
   {
     icon: <Wallet className="w-6 h-6" />,
-    title: "FINANCIAL MODELING",
+    title: "Research & Due Diligence",
     description: "We prepare detailed financial models in both, MS Excel and Modano®, for investment banks, PE funds, Startups and Corporations. These financial models are of various type, depending on their end use.",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "M&A DEAL SUPPORT",
+    title: "Portfolio Monitoring",
     description: "We provide end-to-end M&A and fund-raising support to startups, corporations and investment banks. Our transaction support process starts with a detailed assessment of the client business, including key value drivers, growth potential and financial details.",
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: "PITCH BOOKS",
-    description: "We prepare highly impactful pitch presentations, with several graphs, charts, tables, and other visually appealing infographics. Our pitch books are used by investment banks while making pitch presentations to potential clients for advising them on M&A transactions.",
-  },
-  {
-    icon: <BadgeDollarSign className="w-6 h-6" />,
-    title: "BUSINESS VALUATION",
-    description: "We prepare intricate business valuation models using a combination of the commonly used valuation methodologies.  These include DCF Valuation, Comparable Company Valuation (both listed and transaction comparables), and Sum of The Parts (SOTP) Valuation.",
-  },
-  
-  {
-    icon: <Calculator className="w-6 h-6" />,
-    title: "EQUITY RESEARCH",
-    description: "We provide full Equity Research reports including coverage initiation reports and periodic updates. Our reports are research intensive with in-depth analysis aiding portfolio managers in the investment process.",
-  },
-  {
-    icon: <Calculator className="w-6 h-6" />,
-    title: "INDUSTRY RESEARCH",
-    description: "We have a group of experienced industry analysts, who carry out in-depth research on a broad spectrum of industries, including some industries that are not very widely covered. We primarily rely on secondary resources for our industry research.",
-  },
-  {
-    icon: <Calculator className="w-6 h-6" />,
-    title: "BUSINESS RESEARCH",
-    description: "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
   },
 ]
 
 const cfoServices: Service[] = [
   {
     icon: <Building2 className="w-6 h-6" />,
-    title: "EQUITY RESEARCH",
+    title: "Wealth Planning",
     description: "We provide full Equity Research reports including coverage initiation reports and periodic updates. Our reports are research intensive with in-depth analysis aiding portfolio managers in the investment process.",
   },
   {
     icon: <Calculator className="w-6 h-6" />,
-    title: "INDUSTRY RESEARCH",
+    title: "Business Optimization",
     description: "We have a group of experienced industry analysts, who carry out in-depth research on a broad spectrum of industries, including some industries that are not very widely covered. We primarily rely on secondary resources for our industry research.",
   },
   {
     icon: <Calculator className="w-6 h-6" />,
-    title: "BUSINESS RESEARCH",
+    title: "Risk Management",
+    description: "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
+  },
+  {
+    icon: <Calculator className="w-6 h-6" />,
+    title: "Dversification",
     description: "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
   },
   
