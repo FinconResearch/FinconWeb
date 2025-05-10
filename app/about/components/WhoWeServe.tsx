@@ -1,11 +1,10 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-
+"use client"
+import { motion } from "framer-motion"
 
 function WhoWeServe() {
   return (
-     <motion.section
-      className="py-32 px-6 md:px-12 relative"
+    <motion.section
+      className="py-32 px-6 md:px-12 bg-white relative"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -19,56 +18,153 @@ function WhoWeServe() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">Who We Serve</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">How We Deliver Value</h2>
           <div className="h-1 w-24 bg-blue-600 mx-auto rounded-full"></div>
         </motion.div>
 
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100 relative overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Overview Card */}
+          <motion.div
+            className="md:col-span-2 bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="absolute top-0 right-0 w-40 h-40 bg-navy-900/5 rounded-bl-full"></div>
 
-            <motion.span
-              className="text-xl md:text-2xl text-left text-navy-800 leading-relaxed relative z-10"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.3 }}
             >
-
-              <p className=" text-2xl font-bold mb-8">At FinCon Research, we partner with forward-thinking entrepreneurs and business owners who are ready to take control of their finances and scale with strategy. Our services are ideal for:</p>
-
-
-              <p className="mb-8">Small and Medium Enterprise (SME) Owners looking to improve profitability, optimize operations, and grow sustainably.</p>
-
-              <p className=" pt-4 mb-8">Founders dependent on traditional accounting tools like Tally and basic bookkeeping, who need deeper financial clarity, automation, and strategic insights.</p>
-
-              <p className=" mb-8">Business owners preparing for funding or IPO and seeking expert guidance on financial structuring, compliance, and investor readiness.</p>
-              
-              <p className=" mb-8">Family-run businesses aiming to professionalize their finances, plan for succession, and transition from legacy management to structured growth. </p>
-              
-              <p className=" mb-8">High-income professionals and consultants who earn well but need help converting cash flow into long-term, diversified wealth.</p>
-              
-              <p className=" mb-8">Entrepreneurs experiencing rapid growth who are unsure how to manage rising complexity across finances, taxation, and risk.</p>
-              
-              <p className=" mb-8">Owners with multiple ventures or verticals, who want consolidated financial dashboards, clear visibility, and streamlined reporting.</p>
-              
-              <p className=" mb-8">If you&apos;re looking to go beyond basic accounting and build a robust financial foundation for growth, FinCon Research is your strategic CFO partner—here to turn paper wealth into real wealth.</p>
-            </motion.span>
+              <p className="text-2xl font-bold text-navy-800 mb-8 relative z-10">
+                To serve this mission, FinCon Research operates through two core divisions:
+              </p>
+            </motion.div>
 
             <motion.div
-              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary"
+              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 1.2 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
             />
-          </div>
+          </motion.div>
+
+          {/* First Division */}
+          <motion.div
+            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative overflow-hidden"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="absolute top-0 right-0 w-20 h-20 bg-blue-50 rounded-bl-full"></div>
+
+            <div className="mb-6">
+              <div className="inline-block bg-blue-50 px-4 py-2 rounded-lg mb-4">
+                <span className="text-blue-600 font-bold text-xl">1</span>
+              </div>
+              <h3 className="text-2xl font-bold text-navy-800">The Capabilities Centre</h3>
+            </div>
+
+            <p className="text-navy-800 leading-relaxed mb-6">
+              We support banks, asset managers, and financial institutions with deep market research, accurate valuation
+              models, and robust investment analytics. Our services deliver the same quality as in-house teams but at a
+              fraction of the cost. This helps clients make confident and data-backed decisions.
+            </p>
+
+            <motion.div
+              className="h-1 w-full bg-blue-100 rounded-full overflow-hidden"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <motion.div
+                className="h-full bg-blue-500 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "70%" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 1 }}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Second Division */}
+          <motion.div
+            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative overflow-hidden"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="absolute top-0 right-0 w-20 h-20 bg-teal-50 rounded-bl-full"></div>
+
+            <div className="mb-6">
+              <div className="inline-block bg-teal-50 px-4 py-2 rounded-lg mb-4">
+                <span className="text-teal-600 font-bold text-xl">2</span>
+              </div>
+              <h3 className="text-2xl font-bold text-navy-800">SME Advisory Services</h3>
+            </div>
+
+            <p className="text-navy-800 leading-relaxed mb-6">
+              For small and medium-sized businesses, we provide tailored financial consulting designed to deliver
+              clarity without the cost of a full-time CFO. Our custom dashboards help business owners track key metrics,
+              manage financials, and uncover growth opportunities with ease and precision.
+            </p>
+
+            <motion.div
+              className="h-1 w-full bg-teal-100 rounded-full overflow-hidden"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <motion.div
+                className="h-full bg-teal-500 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "70%" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 1 }}
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Original content display for reference */}
+        <motion.div
+          className="hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+        >
+          <motion.span
+            className="text-xl md:text-2xl text-left text-navy-800 leading-relaxed relative z-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <p className=" text-2xl font-bold mb-8">
+              To serve this mission, FinCon Research operates through two core divisions:
+            </p>
+            <p className="mb-8">1. The Capabilities Centre</p>
+            <p className=" pt-4 mb-8">
+              We support banks, asset managers, and financial institutions with deep market research, accurate valuation
+              models, and robust investment analytics. Our services deliver the same quality as in-house teams but at a
+              fraction of the cost. This helps clients make confident and data-backed decisions.
+            </p>
+            <p className=" mb-8">2. SME Advisory Services</p>
+            <p className=" mb-8">
+              For small and medium-sized businesses, we provide tailored financial consulting designed to deliver
+              clarity without the cost of a full-time CFO. Our custom dashboards help business owners track key metrics,
+              manage financials, and uncover growth opportunities with ease and precision.{" "}
+            </p>
+          </motion.span>
         </motion.div>
       </div>
     </motion.section>

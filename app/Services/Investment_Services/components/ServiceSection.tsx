@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 
 interface Service {
@@ -22,6 +22,9 @@ const ServiceSection = ({
     Array(services.length).fill(false)
   );
 
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
+
   const toggleCard = (index: number) => {
     setExpandedStates((prevStates) =>
       prevStates.map((state, i) => (i === index ? !state : state))
@@ -29,22 +32,22 @@ const ServiceSection = ({
   };
 
   return (
-    <div id="our-offering" className="mb-20 text-left">
+    <div id="our-offering" className="mb-20 text-left" ref={sectionRef}>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5 }}
         className="relative mb-16 flex flex-col items-center"
       >
         <motion.div
           initial={{ width: 0 }}
-          animate={{ width: "60px" }}
+          animate={isInView ? { width: "60px" } : {}}
           transition={{ delay: 0.3, duration: 0.5 }}
           className="h-1 bg-primary mb-4"
         />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.5 }}
           className="text-3xl font-bold text-gray-900 text-center relative"
         >
@@ -52,7 +55,7 @@ const ServiceSection = ({
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
-          animate={{ width: "120px" }}
+          animate={isInView ? { width: "120px" } : {}}
           transition={{ delay: 0.5, duration: 0.5 }}
           className="h-1 bg-primary mt-4"
         />

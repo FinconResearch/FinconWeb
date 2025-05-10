@@ -20,9 +20,38 @@ const logo: Array<{ src: StaticImageData; alt: string }> = [
 const InfiniteScroll = () => {
   return (
     <div className="mb-32">
-      <h2 className="text-center font-bold text-xl mb-24 text-black my-5">
-        Who we Serve
-      </h2>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative mb-16 flex flex-col items-center"
+      >
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "60px" }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="h-1 bg-primary mb-4"
+        />
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="text-3xl font-bold text-gray-900 text-center relative"
+        >
+          Who We Serve
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "120px" }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="h-1 bg-primary mt-4"
+        />
+      </motion.div>
+      
       <div className="flex relative overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-slate-100 before:to-transparent after:absolute after:right-0 after:top-0 after:h-full after:w-10 after:bg-gradient-to-l after:from-slate-100 after:to-transparent">
         <motion.div
           className="flex flex-none gap-36 pr-16"

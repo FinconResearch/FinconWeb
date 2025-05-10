@@ -2,30 +2,43 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import SalaryShuffler from './ui/Salary_shuffle';
+
 
 export default function Salary() {
   return (
-    <section className="container">
+    <section className="container mt-24 mb-24 mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <SalaryShuffler />
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl font-semibold text-black mt-4 text-center"
+          className="text-black font-medium mt-4 text-center"
         >
-          Working with us saves you <span className="text-4xl text-emerald-600">40%</span>
-          <span className="block text-center text-lg">
-            (not taking into consideration time, money and effort used on hiring the right talent)
-            <span className="text-4xl text-blue-600 block text-center">
-              without making compromises on the quality of output.
-            </span>
-          </span>
+          <span className='text-lg'>The average annual salary of an analyst is approximately{' '}
+             <span className='font-bold text-3xl'>$88,000</span> {' '}
+             
+             in the U.S., {' '}
+             
+             <span className='font-bold text-3xl'>£50,600</span> {' '}
+             
+             in the U.K., and {' '}
+             
+             <span className='font-bold text-3xl'>A$105,000</span>{' '}
+             
+              in Australia. In contrast, partnering with us can reduce your costs by at least {' '}
+              
+              <span className='font-bold text-5xl text-emerald-600'>40%</span> {' '}
+              
+              even before factoring in the time, effort, and expenses involved in hiring and onboarding the right talent.{' '}
+              
+              <span className='font-bold text-4xl text-blue-600'> We deliver the same (or better) quality</span>{' '}
+              
+               of work without the overhead, so you get exceptional value without compromise.</span>
         </motion.p>
       </motion.div>
     </section>
