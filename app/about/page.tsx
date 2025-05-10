@@ -6,6 +6,7 @@ import TeamSection from "./components/TeamSection"
 import ContactSection from "./components/ContactSection"
 import { motion } from "framer-motion"
 import { BarChart2, TrendingUp, Users } from "lucide-react"
+import WhoWeServe from "./components/WhoWeServe"
 
 export default function AboutUs() {
   const decorElements = [
@@ -47,6 +48,7 @@ export default function AboutUs() {
 
       {/* Sections */}
       <HeroSection />
+      <WhoWeServe/>
       <ValuesSection />
       <TeamSection />
       <ContactSection />

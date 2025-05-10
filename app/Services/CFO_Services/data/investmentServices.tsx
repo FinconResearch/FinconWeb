@@ -3,7 +3,6 @@ import {
   PieChart,
   Wallet,
   Users,
-  TrendingUp,
   BadgeDollarSign,
 } from "lucide-react";
 
@@ -69,15 +68,6 @@ const investmentServices: Service[] = [
     `,
   },
   {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: "PITCH BOOKS",
-    description:
-      "We prepare highly impactful pitch presentations, with several graphs, charts, tables, and other visually appealing infographics. Our pitch books are used by investment banks while making pitch presentations to potential clients for advising them on M&A transactions.",
-    expandedDescription: `
-    Pitch books highlight the qualifications of an investment bank to advise on the transaction, given the bank’s understanding of the business and its previous involvement with similar deals. They discuss the investment banks experience & credentials, proposed strategy for completing the transaction, and the proposed timeline for completing the transaction process.
-    `,
-  },
-  {
     icon: <BadgeDollarSign className="w-6 h-6" />,
     title: "Financial Advisory",
     description:
@@ -105,22 +95,37 @@ const investmentServices: Service[] = [
   },
   {
     icon: <BadgeDollarSign className="w-6 h-6" />,
-    title: "INDUSTRY RESEARCH",
+    title: "Tax Planning",
     description:
-      "We have a group of experienced industry analysts, who carry out in-depth research on a broad spectrum of industries, including some industries that are not very widely covered. We primarily rely on secondary resources for our industry research.",
+      "Strategic tax planning that minimizes liabilities and maximizes after-tax returns through personalized, compliant solutions.We turn complexity into clarity—aligning your income, investments, and business structure for long-term financial efficiency.",
     expandedDescription: `
-    Our risk assessment service provides thorough analysis of potential investment risks and develops mitigation strategies. 
-    We evaluate market risk, credit risk, liquidity risk, and other factors that could impact your portfolio, helping you make informed decisions while protecting your assets.
-    `,
+    At FinCon Research, our Tax Planning service is focused on helping you keep more of what you earn—by turning complex tax rules into smart, actionable strategies.
+    We take a proactive approach to understanding your income streams, investments, business structure, and long-term goals. From there, we identify opportunities to minimize tax liabilities through optimized asset placement, income structuring, and entity planning.
+    Whether it’s planning withdrawals, structuring compensation, or navigating capital gains, our strategies are designed to be both compliant and efficient. We also coordinate with your CA and legal advisors to ensure every aspect of your financial plan works in harmony.
+    With FinCon Research, you don’t just plan for taxes—you plan for growth, unlocking liquidity and improving returns while staying ahead of regulatory changes.`,
   },
   {
     icon: <BadgeDollarSign className="w-6 h-6" />,
-    title: "BUSINESS RESEARCH",
+    title: "KPI Dashboard",
     description:
-      "We offer customized research on companies and businesses operating all over the globe. Research includes finding key personnel, revenue, no. of employees, competitors and contact details of the key members.",
+      "Real-time KPI dashboards that give business owners clear, actionable insights into financial performance and operational efficiency.From profitability to liquidity and leverage, we turn data into decisions that drive sustainable growth and discipline.",
     expandedDescription: `
-    Our risk assessment service provides thorough analysis of potential investment risks and develops mitigation strategies. 
-    We evaluate market risk, credit risk, liquidity risk, and other factors that could impact your portfolio, helping you make informed decisions while protecting your assets.
+    At FinCon Research, our KPI Dashboard offers business owners a real-time, visual overview of their company’s financial performance—empowering smarter, faster decision-making.
+    This dashboard brings together key metrics across profitability, liquidity, working capital efficiency, and leverage, providing a holistic view of business health. From tracking turnover and net profitability to monitoring return on capital and debt-equity position, we ensure you have clarity on what’s driving—or draining—your business performance.
+    Cash flow and liquidity indicators help you understand payment cycles, inventory holding, and receivables efficiency, while real-time gauges display the current status of debtors, creditors, and operational borrowing limits.
+    With FinCon Research, this KPI Dashboard becomes a strategic tool—not just for reporting, but for identifying bottlenecks, enhancing financial discipline, and ultimately, driving improved profitability and sustainable growth.`,
+  },
+  {
+    icon: <BadgeDollarSign className="w-6 h-6" />,
+    title: "Business Optimization",
+    description:
+      "Transform paper wealth into real financial freedom through strategic business optimisation and capital efficiency.We help unlock trapped value, streamline operations, and convert business success into lasting personal wealth.",
+    expandedDescription: `
+    At FinCon Research, our Business Optimisation service is centered around one clear goal: transforming paper wealth into real, tangible wealth.
+    Many business owners find themselves asset-rich on paper—through high valuations, receivables, or reinvested profits—but struggle to convert that into personal financial freedom. We help bridge that gap by analyzing your business’s financial ecosystem, identifying inefficiencies, and unlocking trapped capital.
+    Through strategic planning, tax-efficient structuring, performance monitoring, and smarter capital allocation, we guide you in extracting value from your business without compromising growth. From optimizing working capital to streamlining cash flow and debt cycles, our approach turns numbers into actionable outcomes.
+    With FinCon Research, your business becomes not just a source of revenue—but a well-structured engine for long-term, real wealth creation and personal financial independence.
+
     `,
   },
 ];

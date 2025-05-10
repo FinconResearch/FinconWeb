@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function ValuesSection() {
   return (
@@ -26,9 +26,13 @@ export default function ValuesSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Core Principles
+            <span>Core Principles</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">Our values</h2>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
+            Our values
+          </h2>
+
           <div className="h-1 w-24 bg-blue-950 mx-auto rounded-full"></div>
         </motion.div>
 
@@ -47,19 +51,33 @@ export default function ValuesSection() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
+              transition={{ delay: 0.6 }}>
               <p className="text-3xl font-bold mb-8">Built on Trust</p>
-              <p className="mb-8">We don&apos;t chase transactions; we build enduring partnerships. Trust is our currency, and we earn it every day.</p>
+              <p className="mb-8">
+                We don&apos;t chase transactions; we build enduring
+                partnerships. Trust is our currency, and we earn it every day.
+              </p>
 
               <p className="text-3xl font-bold pt-4 mb-8">Driven by Integrity</p>
-              <p className="mb-8">Doing the right thing isn&apos;t a choice; it&apos;s our core operating system. We hold ourselves to the highest ethical standards, always.</p>
+              <p className="mb-8">
+                Doing the right thing isn&apos;t a choice; it&apos;s our core
+                operating system. We hold ourselves to the highest ethical
+                standards, always.
+              </p>
 
-              <p className="text-3xl font-bold pt-4 mb-8">Entrepreneurial at Heart</p>
-              <p className="mb-8">We move fast, think bold, and take ownership like founders. Every challenge is an opportunity to create value.</p>
+              <p className="text-3xl font-bold pt-4 mb-8">
+                Entrepreneurial at Heart
+              </p>
+              <p className="mb-8">
+                We move fast, think bold, and take ownership like founders.
+                Every challenge is an opportunity to create value.
+              </p>
 
               <p className="text-3xl font-bold pt-4 mb-8">Growth, Together</p>
-              <p>Our success is tied to yours. We align incentives, act as an extension of your team, and scale impact side by side.</p>
+              <p>
+                Our success is tied to yours. We align incentives, act as an
+                extension of your team, and scale impact side by side.
+              </p>
             </motion.span>
 
             <motion.div
@@ -73,5 +91,5 @@ export default function ValuesSection() {
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }
