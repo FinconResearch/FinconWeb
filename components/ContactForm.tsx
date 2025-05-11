@@ -18,7 +18,6 @@ const formSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(1, "Phone number is required"),
-  investmentRange: z.string().min(1, "Please select an investment range"),
   serviceType: z.string().min(1, "Please select a service type"),
   message: z.string().min(1, "Message is required"),
   preferredContact: z.enum(["email", "phone", "either"]),
@@ -32,7 +31,6 @@ export default function ContactPage() {
     fullName: "",
     email: "",
     phone: "",
-    investmentRange: "",
     serviceType: "",
     message: "",
     preferredContact: "email",
@@ -53,8 +51,6 @@ export default function ContactPage() {
 
   const handleSelectChange = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }))
-
-    
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }))
     }
@@ -83,7 +79,6 @@ export default function ContactPage() {
           fullName: "",
           email: "",
           phone: "",
-          investmentRange: "",
           serviceType: "",
           message: "",
           preferredContact: "email",
