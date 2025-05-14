@@ -6,6 +6,7 @@ import investmentServices from "./data/investmentServices";
 import Heading from "./components/Heading";
 import { CaseStudy } from "./components/CaseStudy";
 import InfiniteScroll from "../ui/InfiniteScroll";
+import { Footer } from "@/components/layout/Footer";
 
 
 export default function ServicesSection() {
@@ -19,6 +20,7 @@ export default function ServicesSection() {
         <InfiniteScroll/>
         <ServiceSection title="Our Offering" services={investmentServices} />
         <CaseStudy/>
+        <Footer/>
       </div>
     </div>
   );

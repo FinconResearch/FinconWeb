@@ -6,6 +6,7 @@ import investmentServices from "./data/CFOServices";
 import Heading from "./components/Heading";
 import ImageSlider from "./components/ImageSlider";
 import WhoWeServe from "./components/WhoWeServe";
+import { Footer } from "@/components/layout/Footer";
 
 export default function ServicesSection() {
   return (
@@ -18,6 +19,7 @@ export default function ServicesSection() {
         <WhoWeServe/>
         <ServiceSection title="Our Offering" services={investmentServices} />
         <ImageSlider/>
+        <Footer/>
       </div>
     </div>
   );

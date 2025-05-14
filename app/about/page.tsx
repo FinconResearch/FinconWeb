@@ -7,6 +7,7 @@ import ContactSection from "./components/ContactSection"
 import { motion } from "framer-motion"
 import { BarChart2, TrendingUp, Users } from "lucide-react"
 import WhoWeServe from "./components/HowWeDeliver"
+import { Footer } from "@/components/layout/Footer"
 
 export default function AboutUs() {
   const decorElements = [
@@ -52,6 +53,7 @@ export default function AboutUs() {
       <ValuesSection />
       <TeamSection />
       <ContactSection />
+      <Footer/>
     </div>
   )
 }
