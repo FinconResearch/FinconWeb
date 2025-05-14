@@ -33,6 +33,7 @@ export default function ValuesSection() {
 
   return (
     <motion.section
+    id="our-values"
       className="py-24 px-6 md:px-12 relative bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

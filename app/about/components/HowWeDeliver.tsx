@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 function WhoWeServe() {
   return (
     <motion.section
+      id="how-we-deliver"
       className="py-32 px-6 md:px-12 bg-white relative"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

@@ -18,6 +18,7 @@ export default function HeroSection() {
 
   return (
     <motion.section
+    id="who-we-are"
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center py-20 px-6 md:px-12 overflow-hidden"
       style={{ opacity: heroOpacity, scale: heroScale, y: heroY }}

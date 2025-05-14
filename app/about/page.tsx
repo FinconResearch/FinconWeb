@@ -1,12 +1,12 @@
 "use client"
 
-import HeroSection from "./components/HeroSection"
+import HeroSection from "./components/WhoWeAre"
 import ValuesSection from "./components/ValuesSection"
 import TeamSection from "./components/TeamSection"
 import ContactSection from "./components/ContactSection"
 import { motion } from "framer-motion"
 import { BarChart2, TrendingUp, Users } from "lucide-react"
-import WhoWeServe from "./components/WhoWeServe"
+import WhoWeServe from "./components/HowWeDeliver"
 
 export default function AboutUs() {
   const decorElements = [

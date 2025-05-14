@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 export default function TeamSection() {
   return (
     <motion.section
+    id="our-team"
       className="py-32 px-6 md:px-12 bg-navy-900 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
