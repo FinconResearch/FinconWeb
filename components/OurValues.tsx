@@ -181,7 +181,7 @@ export default function OurValues() {
             {valueProps.map((prop, index) => (
               <AnimatePresence key={index}>
                 <motion.div
-                  className={`flex-shrink-0 w-full h-[500px] rounded-3xl overflow-hidden border ${prop.borderColor} shadow-xl`}
+                  className={`flex-shrink-0 w-full rounded-3xl overflow-hidden border ${prop.borderColor} shadow-xl`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
                     opacity: 1,
