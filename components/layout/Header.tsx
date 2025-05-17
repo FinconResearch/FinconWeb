@@ -33,9 +33,9 @@ function Navbar({ className }: { className?: string }) {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/logo-1.svg"
-            width={220}
-            height={120}
+            src="/logo1.png"
+            width={250}
+            height={220}
             alt="Company Logo"
             className="rounded-full"
           />

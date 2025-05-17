@@ -1,6 +1,7 @@
 import React from 'react';
-import { Diamond, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import MaxWidthWrapper from '../MaxWidth';
+import Image from 'next/image';
 
 const quickLinks = [
   { name: 'Home', href: '#' },
@@ -33,16 +34,20 @@ export function Footer() {
     <footer className="border-t border-electric-blue/10 bg-blue-950">
     <MaxWidthWrapper maxWidth='2xl'>
 
-      <div className="mx-auto px-4">
+      <div className="mx-auto px-">
         {/* Main Footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <Diamond className="w-6 h-6 text-electric-blue transform rotate-45" />
-              <span className="text-2xl font-bold tracking-tight text-white">
-              logo
-              </span>
+            <div className="flex items-start space-x-2 mb-6">
+              
+              <Image
+              src="/logo1.png"
+              width={300}
+              height={200}
+              alt='logo'
+              />
+              
             </div>
             <p className="text-gray-400 mb-6">
               Revolutionizing sales.
@@ -62,7 +67,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-lg text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -79,7 +84,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-lg text-white font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               {contactInfo.map((info, index) => (
                 <li key={index} className="flex items-center space-x-3">
@@ -92,7 +97,7 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
+            <h3 className="text-lg text-white font-semibold mb-6">Stay Updated</h3>
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter for the latestsales insights.
             </p>
@@ -113,7 +118,7 @@ export function Footer() {
         <div className="py-8 border-t border-neon-green/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2024 FinCon. All rights reserved.
+              © 2025 FinCon. All rights reserved.
             </div>
             <div className="flex space-x-6">
               {legalLinks.map((link) => (
