@@ -170,12 +170,11 @@ export default function OurValues() {
         {/* Cards container */}
         <div className="relative overflow-hidden w-full">
           <motion.div
-            className="flex"
+            className="flex will-change-transform"
             style={{
               width: "100%",
-              // Ensure the container is always as wide as one card
             }}
-            animate={{ x: `-${activeIndex * 100}%` }}
+            animate={{ x: -activeIndex * 100 + "%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {valueProps.map((prop, index) => (
