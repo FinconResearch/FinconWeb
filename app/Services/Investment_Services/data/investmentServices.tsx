@@ -51,7 +51,7 @@ const investmentServices: Service[] = [
     icon: <Wallet className="w-6 h-6" />,
     title: "FINANCIAL MODELING",
     description:
-      "We prepare detailed financial models in both, MS Excel and Modano®, for investment banks, PE funds, Startups and Corporations. These financial models are of various type, depending on their end use.",
+      "We prepare detailed financial models in MS Excel, for investment banks, PE funds, Startups and Corporations. These financial models are of various type, depending on their end use.",
     expandedDescription: `
     They may be used for M&A/ fund raising transactions, PE waterfall determination, business planning/target setting, internal business evaluation, and budgeting.
     A standard three statement financial model includes Income Statement, Balance Sheet, Cash Flow Statement, Assumptions, and Schedules. We normally follow a bottom-up approach to build financial models, where we start by identifying key revenue and cost drivers and then work out the growth assumptions. In addition to these statements, we can also carry out further analyses, including, Key Ratios, DuPont, Breakeven and Payback Analyses; if required.

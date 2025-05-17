@@ -55,7 +55,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,11 +64,11 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
 
           {/* Modal */}
           <motion.div
-            className="fixed inset-0 flex items-center justify-center z-50 px-4"
+            className="fixed inset-0 mt-24 flex items-center justify-center z-[9999] px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose} // <-- Add this to close modal when clicking outside
+            onClick={onClose}
           >
             <motion.div
               className="bg-white rounded-xl shadow-2xl w-full max-w-md sm:max-w-lg p-0 overflow-visible"
@@ -84,7 +84,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
               }}
             >
               {/* Header */}
-              <div className="bg-blue-600 py-6 px-8 relative rounded-t-xl">
+              <div className="bg-blue-600  py-4 px-8 relative z-[500] rounded-t-xl">
                 <button
                   onClick={onClose}
                   className="absolute right-4 top-4 text-white hover:bg-blue-700 p-1 rounded-full transition-colors"

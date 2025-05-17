@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export function NavbarDemo() {
   return (
     <div className="relative w-full items-center justify-center">
-      <Navbar className="top-2" />
+      <Navbar className="bg-white/90" />
     </div>
   );
 }
@@ -27,7 +27,11 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={cn("absolute top-10 inset-x-0 max-w-[1500px] mx-auto z-50", className)}
+      className={cn(
+        "fixed top-0 left-0 right-0 max-w-full mx-auto z-[100]",
+        className
+      )}
+      style={{ width: "100%" }}
     >
       <div className="flex items-center justify-between px-4 py-2">
         {/* Logo */}
@@ -93,7 +97,7 @@ function Navbar({ className }: { className?: string }) {
 
         {/* Book a Demo Button */}
         <button
-          onClick={() => (window.location.href = "/book-demo")}
+          onClick={() => (window.location.href = "/#contact-us")}
           className="hidden md:flex bg-[#0066FF] hover:bg-[#0052CC] text-white rounded-xl px-4 py-3 text-base font-medium items-center space-x-2 transition-colors"
         >
           <span>CONTACT US</span>
@@ -125,24 +129,24 @@ function Navbar({ className }: { className?: string }) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white shadow-xl z-50 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 max-w-sm bg-white shadow-xl z-50 overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
-                <div className="flex items-center justify-between p-5 border-b">
-                  <div className="h-10 w-32 relative">
+                <div className="flex items-center justify-between px-5 border-b">
+                    <div className="h-20 w-56 relative">
                     <Image
-                      src="/logo-1.svg"
-                      width={128}
-                      height={40}
+                      src="/logo1.png"
+                      width={200}
+                      height={200}
                       alt="Company Logo"
-                      className="object-contain"
+                      className="mt-6"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
+                      (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
-                  </div>
+                    </div>
                   <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 rounded-full hover:bg-gray-100">
                     <X className="h-5 w-5" />
                   </button>
@@ -175,21 +179,28 @@ function Navbar({ className }: { className?: string }) {
                         >
                           <div className="pl-4 py-2 space-y-3 border-l-2 border-blue-500 ml-2 my-2">
                             <Link
-                              href="/about"
+                              href="/about#who-we-are"
                               className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               Who we are
                             </Link>
                             <Link
-                              href="/about"
+                              href="/about#how-we-deliver"
+                              className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                             How We Deliver Values
+                            </Link>
+                            <Link
+                              href="/about#our-values"
                               className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               Our Values
                             </Link>
                             <Link
-                              href="/about"
+                              href="/about#our-team"
                               className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
@@ -239,13 +250,7 @@ function Navbar({ className }: { className?: string }) {
                             >
                               CFO Series
                             </Link>
-                            <Link
-                              href="/Services"
-                              className="block py-2 text-gray-600 hover:text-blue-600 transition-colors"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              Qualitative Research
-                            </Link>
+                          
                           </div>
                         </motion.div>
                       )}
@@ -308,26 +313,20 @@ function Navbar({ className }: { className?: string }) {
                       )}
                     </AnimatePresence>
                   </div>
-
-                  {/* Contact */}
-                  <Link
-                    href="/contact"
-                    className="flex items-center w-full py-3 text-left font-medium text-lg hover:text-blue-600 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
                 </div>
 
                 {/* Footer with Contact Button */}
                 <div className="p-5 border-t mt-auto">
-                  <button
-                    onClick={() => (window.location.href = "/contact")}
+                    <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.location.href = "/#contact-us";
+                    }}
                     className="bg-[#0066FF] hover:bg-[#0052CC] text-white rounded-xl px-4 py-3.5 text-base font-medium w-full flex items-center justify-center space-x-2 transition-colors shadow-md"
-                  >
+                    >
                     <span>CONTACT US</span>
                     <ArrowRight className="w-5 h-5" />
-                  </button>
+                    </button>
                 </div>
               </div>
             </motion.div>

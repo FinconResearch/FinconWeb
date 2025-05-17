@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { TypewriterText } from '@/components/ui/TypewriterText';
 import Image from 'next/image';
 import MaxWidthWrapper from './MaxWidth';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -43,9 +44,11 @@ export default function Hero() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="glow-button bg-electric-blue text-white px-8 py-4 rounded-full text-base font-semibold inline-flex items-center shadow-lg shadow-electric-blue/20 hover:shadow-electric-blue/30 transition-all duration-300"
+                    className="glow-button flex flex-row  bg-electric-blue text-white px-8 py-4 rounded-full text-xl font-semibold  items-center shadow-lg shadow-electric-blue/20 hover:shadow-electric-blue/30 transition-all duration-300"
                   >
-                    Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                    <Link href="/about" className='flex gap-2 flex-row'>Know more 
+                    <ArrowRight className='h-7'/>
+                    </Link>
                   </motion.button>
                 </div>
               </div>

@@ -146,7 +146,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="container max-w-7xl py-16 px-4 md:px-6">
+    <div id="contact-us" className="container max-w-7xl py-16 px-4 md:px-6">
       <div className="grid grid-cols-1 lg:ml-24 lg:grid-cols-2 gap-12">
         <motion.div
           className="flex flex-col justify-center space-y-6"

@@ -7,6 +7,7 @@ import Heading from "./components/Heading";
 import InfiniteScroll from "../ui/InfiniteScroll";
 import { Footer } from "@/components/layout/Footer";
 import Salary from "./components/Salary";
+import ContactSection from "@/app/about/components/ContactSection";
 
 
 export default function ServicesSection() {
@@ -20,6 +21,7 @@ export default function ServicesSection() {
         <InfiniteScroll/>
         <ServiceSection title="Our Offering" services={investmentServices} />
         <Salary/>
+        <ContactSection/>
         <Footer/>
       </div>
     </div>

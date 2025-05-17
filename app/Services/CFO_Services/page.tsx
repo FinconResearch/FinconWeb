@@ -7,6 +7,7 @@ import Heading from "./components/Heading";
 import ImageSlider from "./components/ImageSlider";
 import WhoWeServe from "./components/WhoWeServe";
 import { Footer } from "@/components/layout/Footer";
+import ContactSection from "@/app/about/components/ContactSection";
 
 export default function ServicesSection() {
   return (
@@ -19,6 +20,7 @@ export default function ServicesSection() {
         <WhoWeServe/>
         <ServiceSection title="Our Offering" services={investmentServices} />
         <ImageSlider/>
+        <ContactSection/>
         <Footer/>
       </div>
     </div>

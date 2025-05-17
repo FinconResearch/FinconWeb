@@ -106,11 +106,11 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black to-gray-800"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-gray-800" />
+                      <Shield className="w-6 h-6 text-blue-500" />
                     </div>
                   </div>
                   <div>
@@ -168,6 +168,27 @@ const WhyUs = () => {
                   </div>
                 </div>
               </motion.div>
+              
+               <motion.div
+                className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
+                whileHover={{ y: -5 }}
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-800"></div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-5">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+                      <Globe className="w-6 h-6 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">Flexible Engagement Models</h3>
+                    <p className="text-gray-700">
+                      From ad-hoc requests to dedicated analyst teams, we offer engagement options tailored to your deal flow and internal bandwidth.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              
             </motion.div>
           </div>
         </div>
