@@ -168,9 +168,13 @@ export default function OurValues() {
         </div>
 
         {/* Cards container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden w-full">
           <motion.div
-            className="flex space-x-8"
+            className="flex"
+            style={{
+              width: "100%",
+              // Ensure the container is always as wide as one card
+            }}
             animate={{ x: `-${activeIndex * 100}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
