@@ -2,9 +2,9 @@
 import Hero from '@/components/Hero';
 import {Footer} from '@/components/layout/Footer';
 import { HeroServices } from '@/components/HeroServices';
-import  Salary  from '@/components/Salary';
-import EfficiencyMetricsGraph from './components/EfficiencyMetricsGraph';
 import ContactPage from '@/components/ContactForm';
+import OurValues from '@/components/OurValues';
+import WhyUs from '@/components/WhyUs';
 
 
 export default function App() {
@@ -14,8 +14,8 @@ export default function App() {
         <div className="custom-cursor"/>
         <Hero />
         <HeroServices />
-        <EfficiencyMetricsGraph/>
-        <Salary/>
+        <OurValues/>
+        <WhyUs/>
         <ContactPage/>
         <Footer />
       </div>

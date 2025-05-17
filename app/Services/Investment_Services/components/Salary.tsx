@@ -24,24 +24,29 @@ export default function Salary() {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
-      if (isInView) {
-        let start = 0
-        const end = Number.parseInt(value.replace(/,/g, ""))
-        const duration = 2000
-        const increment = Math.ceil(end / (duration / 16)) // 60fps
+      if (!isInView) return
 
-        const timer = setInterval(() => {
-          start += increment
-          if (start > end) {
-            setCount(end)
-            clearInterval(timer)
-          } else {
-            setCount(start)
-          }
-        }, 16)
+      const start = 0
+      const end = Number.parseInt(value.replace(/,/g, ""))
+      const duration = 2000
+      const startTime = performance.now()
 
-        return () => clearInterval(timer)
+      let frameId: number
+
+      const animate = (now: number) => {
+        const elapsed = now - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const current = Math.floor(progress * (end - start) + start)
+        setCount(current)
+        if (progress < 1) {
+          frameId = requestAnimationFrame(animate)
+        } else {
+          setCount(end)
+        }
       }
+
+      frameId = requestAnimationFrame(animate)
+      return () => cancelAnimationFrame(frameId)
     }, [isInView, value])
 
     return <span className={className}>{count.toLocaleString()}</span>
