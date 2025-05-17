@@ -35,7 +35,7 @@ function Navbar({ className }: { className?: string }) {
           <Image
             src="/logo1.png"
             width={250}
-            height={220}
+            height={35}
             alt="Company Logo"
             className="rounded-full"
           />

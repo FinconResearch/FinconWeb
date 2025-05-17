@@ -44,7 +44,7 @@ export function Footer() {
               <Image
               src="/logo1.png"
               width={300}
-              height={200}
+              height={40}
               alt='logo'
               />
               
