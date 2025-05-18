@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, MapPin } from 'lucide-react';
 import MaxWidthWrapper from '../MaxWidth';
 import Image from 'next/image';
 
@@ -18,14 +18,11 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'Instagram', href: '#', icon: Instagram }
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/fincon-research/', icon: Linkedin },
 ];
 
 const contactInfo = [
   { icon: Mail, text: 'contact@gmail.com' },
-  { icon: Phone, text: '+91 123456789' },
   { icon: MapPin, text: 'New Delhi' }
 ];
 
@@ -57,6 +54,7 @@ export function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
+                  target='_blank'
                   className="w-10 h-10 rounded-full bg-dark-card border border-neon-green/10 flex items-center justify-center hover:border-neon-green/30 transition-colors"
                 >
                   <social.icon className="w-5 h-5 text-gray-400 hover:text-neon-green transition-colors" />

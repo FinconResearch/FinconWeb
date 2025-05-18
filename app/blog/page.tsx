@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, User } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import ContactSection from "../about/components/ContactSection"
+import { Footer } from "@/components/layout/Footer"
 
 export default function BlogPage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -186,6 +187,7 @@ export default function BlogPage() {
       
       
       <ContactSection/>
+      <Footer/>
       
     </div>
   )
