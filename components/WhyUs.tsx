@@ -10,34 +10,7 @@ const WhyUs = () => {
 
   return (
     <section ref={whyUsRef} className="py-24 px-4 md:px-8 lg:px-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white z-0"></div>
-
-        {/* Animated background elements */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full bg-gradient-to-br from-blue-100 to-blue-200 opacity-30"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 200 + 50}px`,
-                height: `${Math.random() * 200 + 50}px`,
-              }}
-              animate={{
-                y: [0, Math.random() * 100 - 50],
-                x: [0, Math.random() * 100 - 50],
-                scale: [1, Math.random() * 0.3 + 0.8],
-              }}
-              transition={{
-                duration: Math.random() * 15 + 10,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </div>
+      <div className="absolute inset-0 bg-gradient-to-b  z-0"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -66,7 +39,7 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -90,7 +63,7 @@ const WhyUs = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
-                      <Award className="w-6 h-6 text-blue-700" />
+                      <Award className="w-6 h-6 text-blue-800" />
                     </div>
                   </div>
                   <div>
@@ -106,7 +79,7 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-800"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
@@ -133,7 +106,7 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -153,7 +126,7 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-900"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -173,7 +146,7 @@ const WhyUs = () => {
                 className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-800"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-5">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
