@@ -259,59 +259,13 @@ function Navbar({ className }: { className?: string }) {
 
                   {/* Blogs */}
                   <div className="mb-3">
-                    <button
-                      onClick={() => toggleAccordion("Blogs")}
-                      className="flex items-center justify-between w-full py-3 text-left font-medium text-lg"
+                    <Link
+                      href="/blog"
+                      className="flex items-center w-full py-3 text-left font-medium text-lg text-gray-800 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span>Blogs</span>
-                      <motion.div
-                        animate={{ rotate: activeAccordion === "Blogs" ? 90 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ChevronRight className="h-5 w-5 text-gray-500" />
-                      </motion.div>
-                    </button>
-                    <AnimatePresence>
-                      {activeAccordion === "Blogs" && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="py-2 space-y-4">
-                            {[1, 2, 3, 4].map((i) => (
-                              <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                              >
-                                <Link
-                                  href="/"
-                                  className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  <div className="w-16 h-16 relative overflow-hidden rounded-md bg-gray-100">
-                                    <Image
-                                      src="/placeholder.svg?height=64&width=64"
-                                      fill
-                                      alt="Blog post"
-                                      className="object-cover"
-                                    />
-                                  </div>
-                                  <div>
-                                    <h4 className="font-medium">Blog Title {i}</h4>
-                                    <p className="text-sm text-gray-500">Short description here</p>
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    </Link>
                   </div>
                 </div>
 

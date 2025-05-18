@@ -1,299 +1,250 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { motion, useInView, AnimatePresence } from "framer-motion"
-import { Clock, DollarSign, TrendingUp, Zap, Target, ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+import {
+  BarChart3,
+  Clock,
+  DollarSign,
+  PieChart,
+  Users,
+  CheckCircle,
+  TrendingUp,
+  Zap,
+  Target,
+} from "lucide-react"
 
 export default function OurValues() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 })
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const scrollLeft = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1)
-    }
-  }
-
-  const scrollRight = () => {
-    if (activeIndex < 4) {
-      setActiveIndex(activeIndex + 1)
-    }
-  }
-
-  const valueProps = [
-    {
-      icon: <TrendingUp className="w-10 h-10" />,
-      title: "Accelerated Deal Execution",
-      description:
-        "Free up your internal team to focus on high-impact activities like deal sourcing, negotiations, and relationship management, while we manage the execution grind.",
-      metric: "+30%",
-      metricLabel: "Faster Deal Cycle Time",
-      color: "from-emerald-500 to-teal-500",
-      bgGradient: "from-emerald-50 to-teal-50",
-      borderColor: "border-emerald-200",
-    },
-    {
-      icon: <Zap className="w-10 h-10" />,
-      title: "Productivity That Compounds",
-      description:
-        "Leverage our tech-enabled workflows and domain expertise to reduce research turnaround time and increase your team’s output.",
-      metric: "+60%",
-      metricLabel: "Increase In Analyst Productivity",
-      color: "from-violet-500 to-purple-500",
-      bgGradient: "from-violet-50 to-purple-50",
-      borderColor: "border-violet-200",
-    },
-    {
-      icon: <DollarSign className="w-10 h-10" />,
-      title: "Access to Tier-1 Talent Without Overheads",
-      description:
-        "Tap into a dedicated team of investment research professionals with top-tier training—without the burden of hiring, onboarding, or retaining full-time staff.",
-      metric: "50-70%",
-      metricLabel: "Cost savings",
-      color: "from-amber-500 to-orange-500",
-      bgGradient: "from-amber-50 to-orange-50",
-      borderColor: "border-amber-200",
-    },
-    {
-      icon: <Clock className="w-10 h-10" />,
-      title: "Scalable Research On-Demand",
-      description:
-        "Scale your research capacity up or down as your pipeline shifts—whether it’s for ad-hoc pitch decks, deep dives, or ongoing coverage.",
-      metric: "2X",
-      metricLabel: "Faster Team Ramp-up Time",
-      color: "from-sky-500 to-blue-500",
-      bgGradient: "from-sky-50 to-blue-50",
-      borderColor: "border-sky-200",
-    },
-    {
-      icon: <Target className="w-10 h-10" />,
-      title: "Accuracy That Inspires Confidence",
-      description:
-        "Our rigorous QA process, financial modeling best practices, and experienced staff ensure every output is decision-ready.",
-      metric: "98%",
-      metricLabel: "Accuracy Across Deliverables",
-      color: "from-rose-500 to-pink-500",
-      bgGradient: "from-rose-50 to-pink-50",
-      borderColor: "border-rose-200",
-    },
-  ]
+  const valuePropsRef = useRef(null)
+  const valuePropsInView = useInView(valuePropsRef, { once: true, amount: 0.2 })
 
   return (
-    <section className="relative py-24 overflow-hidden bg-white" ref={containerRef}>
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-400 rounded-full filter blur-3xl"></div>
-      </div>
+    <section id="value-props" ref={valuePropsRef} className="py-24 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 50 }}
+        animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-4xl text-black md:text-5xl font-bold mb-4">
+          Our <span className="text-blue-600">Value</span> Proposition
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-6"></div>
+        <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          We don’t just deliver research—we amplify decision-making.
+        </p>
+      </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {/* Card 1 */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          whileHover={{ y: -10 }}
         >
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-block mb-4"
-          >
-            <span className="px-6 py-2 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold text-sm">
-              Our Value Proposition
-            </span>
-          </motion.div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-blue-50 rounded-full opacity-70"></div>
 
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"
-            >
-              Our Value Proposition
-            </motion.span>
-          </h2>
+          <div className="relative">
+            <div className="bg-blue-50 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600" />
+            </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
-          >
-            We don&apos;t just deliver research—we amplify decision-making.
-          </motion.p>
+            <h3 className="text-2xl text-black font-bold mb-4 group-hover:text-blue-600 transition-colors duration-300">
+              Accelerated Deal Execution
+            </h3>
+
+            <p className="text-gray-700 mb-8 h-24">
+              Free up your internal team to focus on high-impact activities like deal sourcing, negotiations, and relationship management, while we manage the execution grind.
+            </p>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <BarChart3 className="w-5 h-5 text-gray-500" />
+                <span className="text-gray-600">Faster Deal Cycle Time</span>
+              </div>
+
+              <motion.div
+                className="text-3xl font-bold text-blue-600"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={valuePropsInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                +30%
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Navigation buttons */}
-        <div className="flex justify-between items-center mb-8">
-          <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            onClick={scrollLeft}
-            className={`p-4 rounded-full bg-white shadow-lg hover:shadow-xl transition-all ${activeIndex === 0 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
-            disabled={activeIndex === 0}
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
-          </motion.button>
+        {/* Card 2 */}
+        <motion.div
+          className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ y: -10 }}
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-blue-50 rounded-full opacity-70"></div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex space-x-2"
-          >
-            {valueProps.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${activeIndex === index ? "bg-gradient-to-r from-violet-500 to-indigo-500 scale-125" : "bg-gray-300"}`}
-              />
-            ))}
-          </motion.div>
+          <div className="relative">
+            <div className="bg-blue-50 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-6">
+              <Zap className="w-8 h-8 text-blue-700" />
+            </div>
 
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            onClick={scrollRight}
-            className={`p-4 rounded-full bg-white shadow-lg hover:shadow-xl transition-all ${activeIndex === 4 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
-            disabled={activeIndex === 4}
-          >
-            <ChevronRight className="w-6 h-6 text-gray-700" />
-          </motion.button>
-        </div>
+            <h3 className="text-2xl text-black font-bold mb-4 group-hover:text-blue-700 transition-colors duration-300">
+              Productivity That Compounds
+            </h3>
 
-        {/* Cards container */}
-        <div className="relative overflow-hidden w-full">
-          <motion.div
-            className="flex will-change-transform"
-            style={{
-              width: "100%",
-            }}
-            animate={{ x: -activeIndex * 100 + "%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            {valueProps.map((prop, index) => (
-              <AnimatePresence key={index}>
-                <motion.div
-                  className={`flex-shrink-0 w-full rounded-3xl overflow-hidden border ${prop.borderColor} shadow-xl`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    rotateY: [0, 10, 0],
-                    rotateX: [0, 5, 0],
-                  }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    rotateY: { repeat: Number.POSITIVE_INFINITY, repeatType: "mirror", duration: 5, ease: "easeInOut" },
-                    rotateX: { repeat: Number.POSITIVE_INFINITY, repeatType: "mirror", duration: 7, ease: "easeInOut" },
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                    transition: { duration: 0.3 },
-                  }}
-                >
-                  <div className={`h-full bg-gradient-to-br ${prop.bgGradient} p-8 flex flex-col`}>
-                    {/* Card header with floating elements */}
-                    <div className="relative mb-8">
-                      <motion.div
-                        className={`absolute -top-6 -right-6 w-32 h-32 rounded-full bg-gradient-to-br ${prop.color} opacity-10`}
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          rotate: [0, 90, 180, 270, 360],
-                        }}
-                        transition={{
-                          duration: 20,
-                          repeat: Number.POSITIVE_INFINITY,
-                          ease: "linear",
-                        }}
-                      />
+            <p className="text-gray-700 mb-8 h-24">
+              Leverage our tech-enabled workflows and domain expertise to reduce research turnaround time and increase your team’s output.
+            </p>
 
-                      <motion.div
-                        className={`p-5 rounded-2xl bg-white shadow-lg inline-block`}
-                        animate={{
-                          y: [0, -10, 0],
-                          rotate: [0, 5, 0, -5, 0],
-                        }}
-                        transition={{
-                          y: { repeat: Number.POSITIVE_INFINITY, duration: 3, ease: "easeInOut" },
-                          rotate: { repeat: Number.POSITIVE_INFINITY, duration: 5, ease: "easeInOut" },
-                        }}
-                      >
-                        <div className={`bg-gradient-to-br ${prop.color} text-white p-3 rounded-xl`}>{prop.icon}</div>
-                      </motion.div>
-                    </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <PieChart className="w-5 h-5 text-gray-500" />
+                <span className="text-gray-600">Increase In Analyst Productivity</span>
+              </div>
 
-                    {/* Card content */}
-                    <motion.h3
-                      className="text-3xl font-bold mb-4 text-gray-900"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                    >
-                      {prop.title}
-                    </motion.h3>
+              <motion.div
+                className="text-3xl font-bold text-blue-700"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={valuePropsInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                +60%
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
 
-                    <motion.p
-                      className="text-lg text-gray-600 mb-8 flex-grow"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                    >
-                      {prop.description}
-                    </motion.p>
+        {/* Card 3 */}
+        <motion.div
+          className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ y: -10 }}
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-800"></div>
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-blue-50 rounded-full opacity-70"></div>
 
-                    {/* Metric display */}
-                    <motion.div
-                      className="mt-auto"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                    >
-                      <div className="flex items-end">
-                        <motion.div
-                          className={`text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r ${prop.color}`}
-                          animate={{
-                            scale: [1, 1.1, 1],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Number.POSITIVE_INFINITY,
-                            repeatType: "reverse",
-                          }}
-                        >
-                          {prop.metric}
-                        </motion.div>
-                        <div className="ml-4 text-gray-500 font-medium">{prop.metricLabel}</div>
-                      </div>
+          <div className="relative">
+            <div className="bg-blue-50 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-6">
+              <DollarSign className="w-8 h-8 text-blue-800" />
+            </div>
 
-                      <motion.div
-                        className={`h-2 w-full mt-4 rounded-full bg-gray-200 overflow-hidden`}
-                        initial={{ width: "0%" }}
-                        animate={{ width: "100%" }}
-                        transition={{ delay: 0.6 + index * 0.1, duration: 1 }}
-                      >
-                        <motion.div
-                          className={`h-full bg-gradient-to-r ${prop.color}`}
-                          initial={{ width: "0%" }}
-                          animate={{ width: "80%" }}
-                          transition={{ delay: 0.8 + index * 0.1, duration: 1.5, ease: "easeOut" }}
-                        />
-                      </motion.div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            ))}
-          </motion.div>
-        </div>
+            <h3 className="text-2xl text-black font-bold mb-4 group-hover:text-blue-800 transition-colors duration-300">
+              Access to Tier-1 Talent Without Overheads
+            </h3>
+
+            <p className="text-gray-700 mb-8 h-24">
+              Tap into a dedicated team of investment research professionals with top-tier training—without the burden of hiring, onboarding, or retaining full-time staff.
+            </p>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Users className="w-5 h-5 text-gray-500" />
+                <span className="text-gray-600">Cost savings</span>
+              </div>
+
+              <motion.div
+                className="text-3xl font-bold text-blue-800"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={valuePropsInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                50-70%
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Card 4 */}
+        <motion.div
+          className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          whileHover={{ y: -10 }}
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black to-gray-800"></div>
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-gray-100 rounded-full opacity-70"></div>
+
+          <div className="relative">
+            <div className="bg-gray-100 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-6">
+              <Clock className="w-8 h-8 text-gray-800" />
+            </div>
+
+            <h3 className="text-2xl text-black font-bold mb-4 group-hover:text-blue-500 transition-colors duration-300">
+              Scalable Research On-Demand
+            </h3>
+
+            <p className="text-gray-700 mb-8 h-24">
+              Scale your research capacity up or down as your pipeline shifts—whether it’s for ad-hoc pitch decks, deep dives, or ongoing coverage.
+            </p>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Clock className="w-5 h-5 text-gray-500" />
+                <span className="text-gray-600">Faster Team Ramp-up Time</span>
+              </div>
+
+              <motion.div
+                className="text-3xl font-bold text-blue-500"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={valuePropsInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                2X
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Card 5 */}
+        <motion.div
+          className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          animate={valuePropsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          whileHover={{ y: -10 }}
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-blue-50 rounded-full opacity-70"></div>
+
+          <div className="relative">
+            <div className="bg-blue-50 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-6">
+              <Target className="w-8 h-8 text-blue-600" />
+            </div>
+
+            <h3 className="text-2xl text-black font-bold mb-4 group-hover:text-blue-600 transition-colors duration-300">
+              Accuracy That Inspires Confidence
+            </h3>
+
+            <p className="text-gray-700 mb-8 h-24">
+              Our rigorous QA process, financial modeling best practices, and experienced staff ensure every output is decision-ready.
+            </p>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-gray-500" />
+                <span className="text-gray-600">Accuracy Across Deliverables</span>
+              </div>
+
+              <motion.div
+                className="text-3xl font-bold text-blue-600"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={valuePropsInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                98%
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
