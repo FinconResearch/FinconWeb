@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
+import { HoveredLink, Menu, MenuItem} from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Menu as MenuIcon, X } from "lucide-react";
@@ -62,33 +62,7 @@ function Navbar({ className }: { className?: string }) {
                 <HoveredLink href="/Services/CFO_Services">CFO Series</HoveredLink>
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Blogs" className="text-neutral-800">
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                <ProductItem
-                  title="HI"
-                  href="http://localhost:3000/"
-                  src="/AboutusImage.jpg"
-                  description="hello"
-                />
-                <ProductItem
-                  title="HI"
-                  href="http://localhost:3000/"
-                  src="/AboutusImage.jpg"
-                  description="HELLO"
-                />
-                <ProductItem
-                  title="HI"
-                  href="http://localhost:3000/"
-                  src="/AboutusImage.jpg"
-                  description="HELLO"
-                />
-                <ProductItem
-                  title="HI"
-                  href="http://localhost:3000/"
-                  src="/AboutusImage.jpg"
-                  description="HELLO"
-                />
-              </div>
+            <MenuItem setActive={setActive} active={active} href="/blog" item="Blogs" className="text-neutral-800">
             </MenuItem>
             <MenuItem href="/contact" setActive={setActive} active={active} item="Contact" className="text-neutral-800">
             </MenuItem>
