@@ -4,7 +4,7 @@ import ServiceSection from "./components/ServiceSection";
 import InvestmentResearchSection from "./components/Cfo";
 import investmentServices from "./data/CFOServices";
 import Heading from "./components/Heading";
-import ImageSlider from "./components/ImageSlider";
+// import ImageSlider from "./components/ImageSlider";
 import WhoWeServe from "./components/WhoWeServe";
 import { Footer } from "@/components/layout/Footer";
 import ContactSection from "@/app/about/components/ContactSection";
@@ -19,7 +19,7 @@ export default function ServicesSection() {
         <InvestmentResearchSection />
         <WhoWeServe/>
         <ServiceSection title="Our Offering" services={investmentServices} />
-        <ImageSlider/>
+        {/* <ImageSlider/> */}
         <ContactSection/>
         <Footer/>
       </div>

@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { motion, useScroll, useTransform, useInView, useSpring, AnimatePresence } from "framer-motion"
+import {  useRef } from "react"
+import { motion, useScroll, useTransform, useInView, useSpring} from "framer-motion"
 
 export default function Salary() {
   // Refs for scroll animations
@@ -19,38 +19,7 @@ export default function Salary() {
   const isSavingsInView = useInView(savingsRef, { once: true, amount: 0.5 })
   const isQualityInView = useInView(qualityRef, { once: true, amount: 0.5 })
 
-  // Animated counter hook
-  const Counter = ({ value, isInView, className }: { value: string; isInView: boolean; className?: string }) => {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-      if (!isInView) return
-
-      const start = 0
-      const end = Number.parseInt(value.replace(/,/g, ""))
-      const duration = 2000
-      const startTime = performance.now()
-
-      let frameId: number
-
-      const animate = (now: number) => {
-        const elapsed = now - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        const current = Math.floor(progress * (end - start) + start)
-        setCount(current)
-        if (progress < 1) {
-          frameId = requestAnimationFrame(animate)
-        } else {
-          setCount(end)
-        }
-      }
-
-      frameId = requestAnimationFrame(animate)
-      return () => cancelAnimationFrame(frameId)
-    }, [isInView, value])
-
-    return <span className={className}>{count.toLocaleString()}</span>
-  }
+  // Removed the Counter component and use static numbers instead
 
   // Parallax effect for background elements
   const { scrollYProgress } = useScroll({
@@ -118,15 +87,7 @@ export default function Salary() {
                   <p className="text-gray-600 mb-3">Average Annual Salary</p>
                   <div className="flex items-baseline">
                     <span className="text-blue-600 text-2xl font-bold mr-1">$</span>
-                    <AnimatePresence>
-                      {isUSInView && (
-                        <Counter
-                          value="88000"
-                          isInView={isUSInView}
-                          className="text-4xl font-extrabold text-blue-600"
-                        />
-                      )}
-                    </AnimatePresence>
+                    <span className="text-4xl font-extrabold text-blue-600">88,000</span>
                   </div>
                 </div>
               </div>
@@ -152,15 +113,7 @@ export default function Salary() {
                   <p className="text-gray-600 mb-3">Average Annual Salary</p>
                   <div className="flex items-baseline">
                     <span className="text-blue-600 text-2xl font-bold mr-1">£</span>
-                    <AnimatePresence>
-                      {isUKInView && (
-                        <Counter
-                          value="50600"
-                          isInView={isUKInView}
-                          className="text-4xl font-extrabold text-blue-600"
-                        />
-                      )}
-                    </AnimatePresence>
+                    <span className="text-4xl font-extrabold text-blue-600">50,600</span>
                   </div>
                 </div>
               </div>
@@ -186,15 +139,7 @@ export default function Salary() {
                   <p className="text-gray-600 mb-3">Average Annual Salary</p>
                   <div className="flex items-baseline">
                     <span className="text-blue-600 text-2xl font-bold mr-1">A$</span>
-                    <AnimatePresence>
-                      {isAUInView && (
-                        <Counter
-                          value="105000"
-                          isInView={isAUInView}
-                          className="text-4xl font-extrabold text-blue-600"
-                        />
-                      )}
-                    </AnimatePresence>
+                    <span className="text-4xl font-extrabold text-blue-600">105,000</span>
                   </div>
                 </div>
               </div>
@@ -218,28 +163,8 @@ export default function Salary() {
 
                 <div className="flex items-center justify-center mb-6 relative">
                   <div className="relative">
-                    <AnimatePresence>
-                      {isSavingsInView && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 100,
-                            damping: 10,
-                            delay: 0.3,
-                          }}
-                          className="flex items-baseline"
-                        >
-                          <Counter
-                            value="40"
-                            isInView={isSavingsInView}
-                            className="text-7xl font-black text-emerald-600"
-                          />
-                          <span className="text-5xl font-black text-emerald-600">%</span>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    <span className="text-7xl font-black text-emerald-600">40</span>
+                    <span className="text-5xl font-black text-emerald-600">%</span>
                     <motion.div
                       initial={{ width: 0 }}
                       animate={isSavingsInView ? { width: "100%" } : {}}
