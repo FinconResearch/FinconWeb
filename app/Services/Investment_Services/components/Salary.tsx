@@ -12,14 +12,13 @@ export default function Salary() {
   const savingsRef = useRef(null)
   const qualityRef = useRef(null)
 
-  // InView states for each element
   const isUSInView = useInView(usRef, { once: true, amount: 0.5 })
   const isUKInView = useInView(ukRef, { once: true, amount: 0.5 })
   const isAUInView = useInView(auRef, { once: true, amount: 0.5 })
   const isSavingsInView = useInView(savingsRef, { once: true, amount: 0.5 })
   const isQualityInView = useInView(qualityRef, { once: true, amount: 0.5 })
 
-  // Removed the Counter component and use static numbers instead
+ 
 
   // Parallax effect for background elements
   const { scrollYProgress } = useScroll({
@@ -30,9 +29,7 @@ export default function Salary() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100])
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -50])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-  // Removed unused scale variable
 
-  // Removed unused smoothScale variable
   const smoothOpacity = useSpring(opacity, { damping: 15, stiffness: 100 })
 
   return (

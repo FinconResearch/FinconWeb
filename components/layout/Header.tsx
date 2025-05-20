@@ -64,8 +64,6 @@ function Navbar({ className }: { className?: string }) {
             </MenuItem>
             <MenuItem setActive={setActive} active={active} href="/blog" item="Blogs" className="text-neutral-800">
             </MenuItem>
-            <MenuItem href="/contact" setActive={setActive} active={active} item="Contact" className="text-neutral-800">
-            </MenuItem>
           </Menu>
         </div>
 

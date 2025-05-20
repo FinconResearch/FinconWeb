@@ -20,7 +20,8 @@ export default function BlogPage() {
       author: "Sidak",
       category: "Technology",
       readTime: "5 min read",
-      image: "/public/AboutUsimage.jpg  ?height=400&width=600",
+      image: "/AboutUsimage.jpg",
+      slug: "/blog/Future-of-web-development",
     },
     {
       id: 2,
@@ -30,7 +31,8 @@ export default function BlogPage() {
       author: "Sidak",
       category: "Performance",
       readTime: "8 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/AboutUsimage.jpg",
+      slug: "/blog/optimizing-performance",
     },
     {
       id: 3,
@@ -40,7 +42,7 @@ export default function BlogPage() {
       author: "Sidak",
       category: "Design",
       readTime: "6 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/AboutUsimage.jpg",
     },
     
   ]
@@ -121,7 +123,7 @@ export default function BlogPage() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          {blogPosts.map((post, index) => (
+          {blogPosts.map((post) => (
             <motion.div
               key={post.id}
               variants={itemVariants}
@@ -165,7 +167,7 @@ export default function BlogPage() {
                     className="group"
                   >
                     <Link
-                      href={`/blog/${post.id}`}
+                      href={post.slug ?? "#"}
                       className="inline-flex items-center text-blue-800 font-medium group-hover:text-blue-700 transition-colors duration-200"
                     >
                       Read More

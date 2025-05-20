@@ -21,7 +21,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
       <p>Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
     `,
     date: "May 12, 2025",
-    author: "SIdak",
+    author: "Sidak",
     category: "Technology",
     readTime: "5 min read",
     image: "/placeholder.svg?height=600&width=1200",
@@ -43,9 +43,9 @@ export default function BlogPost({ params }: { params: { id: string } }) {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <Link href="/blog" className="inline-flex mt-11 items-center text-blue-600 hover:text-blue-800 group">
+          <Link href="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 group">
             <ArrowLeft className="mr-2 h-4 w-4 transform group-hover:-translate-x-1 transition-transform duration-200" />
-            <span className="border-b border-dashed text-blue-600  pb-0.5">Back to all articles</span>
+            <span className="border-b border-dashed border-blue-100 pb-0.5">Back to all articles</span>
           </Link>
         </motion.div>
 
@@ -128,6 +128,19 @@ export default function BlogPost({ params }: { params: { id: string } }) {
                   {tag}
                 </motion.span>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-10 rounded-2xl shadow-sm">
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold text-blue-800">Enjoyed this article?</h3>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-shadow"
+              >
+                Share Article
+              </motion.button>
             </div>
           </div>
         </motion.div>
