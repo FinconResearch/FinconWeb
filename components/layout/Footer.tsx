@@ -5,9 +5,8 @@ import Image from 'next/image';
 
 const quickLinks = [
   { name: 'Home', href: '#' },
-  { name: 'Features', href: '#features' },
-  { name: 'Case Studies', href: '#case-studies' },
-  { name: 'Pricing', href: '#pricing' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Services', href: '/Services/' },
   { name: 'Contact', href: '#contact' }
 ];
 
