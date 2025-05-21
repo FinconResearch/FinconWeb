@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 
-function WhoWeServe() {
+function HowWeDeliver() {
   return (
     <motion.section
       id="how-we-deliver"
@@ -172,4 +172,4 @@ function WhoWeServe() {
   )
 }
 
-export default WhoWeServe
+export default HowWeDeliver

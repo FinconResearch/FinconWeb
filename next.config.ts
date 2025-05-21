@@ -2,13 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has type errors.
     ignoreBuildErrors: true,
   },
   images: {
@@ -22,7 +18,7 @@ const nextConfig: NextConfig = {
         hostname: "assets.aceternity.com",
       },
       {
-       protocol: "https",
+        protocol: "https",
         hostname: "images.unsplash.com",
       },
       {
@@ -30,7 +26,11 @@ const nextConfig: NextConfig = {
         hostname: "hebbkx1anhila5yf.public.blob.vercel-storage.com",
       },
     ]
-  }
+  },
+  allowedDevOrigins: [
+    "http://localhost:3000",
+    "http://192.168.1.5:3000"
+  ]
 };
 
 export default nextConfig;

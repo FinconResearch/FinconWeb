@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Calendar, Shield } from "lucide-react"
@@ -13,6 +12,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import PhoneInput from "react-phone-input-2"
+import "react-phone-input-2/lib/bootstrap.css"
 
 const formSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
@@ -42,8 +43,6 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-
-    
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }))
     }
@@ -56,24 +55,21 @@ export default function ContactPage() {
     }
   }
 
+  const handlePhoneChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, phone: value }))
+    if (errors.phone) {
+      setErrors((prev) => ({ ...prev, phone: undefined }))
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
     try {
-      // Validate form
       formSchema.parse(formData)
-
-      // Show submitting state
       setIsSubmitting(true)
-
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      // Show success state
       setIsSubmitting(false)
       setIsSuccess(true)
-
-      // Reset form after 2 seconds
       setTimeout(() => {
         setFormData({
           fullName: "",
@@ -85,7 +81,6 @@ export default function ContactPage() {
         })
         setIsSuccess(false)
       }, 2000)
-
       toast({
         title: "Consultation request received",
         description: "Our financial advisors will contact you within 24 hours.",
@@ -255,13 +250,20 @@ export default function ContactPage() {
                 <Label htmlFor="phone" className="text-gray-700">
                   Phone Number
                 </Label>
-                <Input
-                  id="phone"
-                  name="phone"
+                <PhoneInput
+                  country={"us"}
+                  enableSearch={true}
                   value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+91 123 456 7890"
-                  className={`border-gray-300 text-black focus:border-blue-500 focus:ring-blue-500 ${errors.phone ? "border-red-500" : ""}`}
+                  onChange={handlePhoneChange}
+                  inputProps={{
+                    name: "phone",
+                    required: true,
+                    className:
+                      "w-full px-4 py-[6.5px] text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
+                  }}
+                  containerClass="w-full text-black"
+                  inputClass="w-full"
+                  inputStyle={{ paddingLeft: 56 }}
                 />
                 {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
               </div>

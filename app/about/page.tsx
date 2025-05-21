@@ -5,15 +5,15 @@ import ValuesSection from "./components/ValuesSection"
 import TeamSection from "./components/TeamSection"
 import ContactSection from "./components/ContactSection"
 import { motion } from "framer-motion"
-import { BarChart2, TrendingUp, Users } from "lucide-react"
-import WhoWeServe from "./components/HowWeDeliver"
+import { TrendingUp, Users } from "lucide-react"
+
 import { Footer } from "@/components/layout/Footer"
+import HowWeDeliver from "./components/HowWeDeliver"
 
 export default function AboutUs() {
   const decorElements = [
-    { icon: <BarChart2 className="h-full w-full hidden md:block" />, top: "23%", right: "2%", size: "80px", delay: 0.1 },
-    { icon: <TrendingUp className="h-full w-full" />, bottom: "15%", left: "12%", size: "70px", delay: 0.2 },
-    { icon: <Users className="h-full w-full" />, bottom: "25%", right: "15%", size: "65px", delay: 0.3 },
+    { icon: <TrendingUp className="md:h-full md:block md:w-full hidden" />, top: undefined, bottom: "15%", left: "15%", size: "70px", delay: 0.2 },
+    { icon: <Users className="h-full w-full" />, top: undefined, bottom: "25%", right: "15%", size: "65px", delay: 0.3 },
   ]
 
   return (
@@ -49,7 +49,7 @@ export default function AboutUs() {
 
       {/* Sections */}
       <HeroSection />
-      <WhoWeServe/>
+      <HowWeDeliver/>
       <ValuesSection />
       <TeamSection />
       <ContactSection />

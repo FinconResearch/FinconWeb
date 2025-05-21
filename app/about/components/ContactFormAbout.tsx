@@ -1,9 +1,10 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
+import PhoneInput from "react-phone-input-2"
+import "react-phone-input-2/lib/bootstrap.css"
 
 type ContactFormModalProps = {
   isOpen: boolean
@@ -15,6 +16,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
   const [selectedService, setSelectedService] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [phone, setPhone] = useState("")
 
   const buttonVariants = {
     idle: { scale: 1 },
@@ -124,16 +126,24 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                         required
                       />
                     </div>
-
                     <div className="space-y-2">
                       <label htmlFor="phone" className="block text-gray-700 font-medium">
                         Phone Number
                       </label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        placeholder="+91 123 456 7890"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      <PhoneInput
+                        country={"us"}
+                        enableSearch={true}
+                        value={phone}
+                        onChange={setPhone}
+                        inputProps={{
+                          name: "phone",
+                          required: true,
+                          className:
+                            "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
+                        }}
+                        containerClass="w-full"
+                        inputClass="w-full"
+                        inputStyle={{ paddingLeft: 56 }}
                       />
                     </div>
                   </div>
@@ -149,7 +159,9 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                       value={selectedService}
                       onChange={(e) => setSelectedService(e.target.value)}
                     >
-                      <option value="" disabled>Select service type</option>
+                      <option value="" disabled>
+                        Select service type
+                      </option>
                       <option value="investment">Investment and Research Services </option>
                       <option value="retirement">CFO Services</option>
                     </select>
@@ -210,7 +222,12 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
                         </svg>
                       </>
                     )}

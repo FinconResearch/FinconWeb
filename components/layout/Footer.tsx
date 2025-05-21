@@ -45,9 +45,6 @@ export function Footer() {
               />
               
             </div>
-            <p className="text-gray-400 mb-6">
-              Revolutionizing sales.
-            </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
