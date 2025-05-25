@@ -14,14 +14,14 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "The Future of Web Development",
+      title: "Empowering Prosperity: The Surge of Women HNWIs in India",
       excerpt: "aaaaaaaaaaaaaaaaaaa aaaaaaaa aaaaa a a a aaaaaaaaaaaaa..",
       date: "May 12, 2025",
       author: "Sidak",
       category: "Technology",
       readTime: "5 min read",
       image: "/AboutUsimage.jpg",
-      slug: "/blog/Future-of-web-development",
+      slug: "/blog/empowering-prosperity",
     },
     {
       id: 2,

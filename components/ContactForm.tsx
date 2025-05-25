@@ -26,6 +26,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>
 
+// Make sure to set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your .env.local file
 export default function ContactPage() {
   const { toast } = useToast()
   const [formData, setFormData] = useState<FormData>({
@@ -67,24 +68,51 @@ export default function ContactPage() {
     try {
       formSchema.parse(formData)
       setIsSubmitting(true)
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setIsSubmitting(false)
-      setIsSuccess(true)
-      setTimeout(() => {
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          serviceType: "",
-          message: "",
-          preferredContact: "email",
-        })
-        setIsSuccess(false)
-      }, 2000)
-      toast({
-        title: "Consultation request received",
-        description: "Our financial advisors will contact you within 24 hours.",
+
+      // Send data to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY as string,
+          from_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          serviceType: formData.serviceType,
+          message: formData.message,
+          preferredContact: formData.preferredContact,
+          to: "contact@finconresearch.com",
+        }),
       })
+
+      const result = await response.json()
+      setIsSubmitting(false)
+
+      if (result.success) {
+        setIsSuccess(true)
+        setTimeout(() => {
+          setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            serviceType: "",
+            message: "",
+            preferredContact: "email",
+          })
+          setIsSuccess(false)
+        }, 2000)
+        toast({
+          title: "Consultation request received",
+          description: "Our financial advisors will contact you within 24 hours.",
+        })
+      } else {
+        toast({
+          title: "Submission failed",
+          description: "There was an error submitting your request. Please try again.",
+        })
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Partial<Record<keyof FormData, string>> = {}
