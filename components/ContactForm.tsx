@@ -99,7 +99,7 @@ export default function ContactPage() {
             phone: "",
             serviceType: "",
             message: "",
-            preferredContact: "email",
+            preferredContact: "either",
           })
           setIsSuccess(false)
         }, 2000)

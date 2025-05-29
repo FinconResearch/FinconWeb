@@ -51,10 +51,9 @@ export default function TeamSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.8 }}
             >
-                <p className="text-3xl font-bold mb-8">Team</p>
                 <p className="mb-8"> We are a team of builders. Entrepreneurial, driven, and grounded in real-world problem solving. While we may be early in our journey, we bring with us the energy of a startup and the mindset of long-term partners.</p>
                 
-                <p className="text-3xl font-bold pt-4 mb-8">LEADERSHIP</p>
+                <p className="text-3xl font-bold pt-4 mb-8">Leadership</p>
                 <p className="mb-1">Our founding team brings experience across investment banking, private equity, and consulting. With exposure to global markets and top institutions, we have seen first-hand how high-impact teams operate and we are building that DNA into everything we do.</p><br/>
 
                 <p className="mb-8">We are not chasing scale for the sake of it. We are here to do focused, thoughtful work that creates tangible value for our clients and partners.</p>
