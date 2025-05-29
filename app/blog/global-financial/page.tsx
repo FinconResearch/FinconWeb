@@ -71,7 +71,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <Link href="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 group">
+          <Link href="/blog" className="inline-flex items-center pt-11 text-blue-600 hover:text-blue-800 group">
             <ArrowLeft className="mr-2 h-4 w-4 transform group-hover:-translate-x-1 transition-transform duration-200" />
             <span className="border-b border-dashed border-blue-100 pb-0.5">Back to all articles</span>
           </Link>
