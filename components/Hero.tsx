@@ -11,8 +11,8 @@ export default function Hero() {
   return (
     <MaxWidthWrapper maxWidth='2xl'>
       <section id="home" className="relative">
-        <div className="mx-auto relative h-screen">
-          <div className="flex flex-col gap-24 lg:flex-row items-center justify-between h-full">
+        <div className="mx-auto relative lg:h-screen">
+          <div className="flex lg:gap-24 lg:flex-row items-center justify-between lg:h-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -30,7 +30,12 @@ export default function Hero() {
                 <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight text-black">
                   We are a cutting-edge financial research firm that{' '}
                   <span className="text-electric-blue whitespace-nowrap">
-                    <TypewriterText />
+                    
+                    {/* <br className='sm:block md:hidden'/> */}
+                    
+                    <div className='inline-block h-full min-w-32'>
+                      <TypewriterText />
+                    </div>
                   </span>
                   <br />
                   business intelligence solutions that enhance revenues/profits.
@@ -58,14 +63,14 @@ export default function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/2 h-[45%] relative"
+              className="w-full hidden lg:block lg:w-1/2 h-[45%] relative"
             >
               <Image
                 src="/stock.webp"
                 alt="AI Voice Agent Illustration"
                 width={1920}
                 height={1080}
-                className="w-full h-full object-cover object-center rounded-2xl"
+                className="w-full h-full  object-cover object-center rounded-2xl"
               />
             </motion.div>
           </div>

@@ -59,10 +59,10 @@ export default function TeamSection() {
                 <p className="mb-8">We are not chasing scale for the sake of it. We are here to do focused, thoughtful work that creates tangible value for our clients and partners.</p>
                                                                      
 
-                <p className="text-3xl font-bold pt-4 mb-8">ASSOCIATES & ANALYSTS</p>
+                <p className="text-3xl font-bold pt-4 mb-8">Associates & Analysts</p>
                 <p className="mb-8">Our analysts and associates are sharp, curious, and execution-focused. Handpicked from top institutions, they are trained in the fundamentals of finance, legal frameworks, and project delivery. We invest in developing talent that is not just technically sound but also client-ready from day one.</p>
 
-                <p className="text-3xl font-bold pt-4 mb-8">ADVISORS</p>
+                <p className="text-3xl font-bold pt-4 mb-8">Advisors</p>
                 <p className="mb-1">To punch above our weight, we actively engage with industry experts, practitioners, and mentors who guide our thinking and help us stay aligned with the pace of global change.</p><br/>
                 <span className="">Together, we are building more than a team. We are laying the foundation for a world-class capability center that delivers with integrity, insight, and ownership.</span> 
             </motion.div>
