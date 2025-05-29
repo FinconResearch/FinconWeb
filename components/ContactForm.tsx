@@ -309,8 +309,8 @@ export default function ContactPage() {
                   <SelectValue placeholder="Select service type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="retirement">Investment and Research Services</SelectItem>
-                  <SelectItem value="investment">CFO Services</SelectItem>
+                  <SelectItem value="Investment and Research Services">Investment and Research Services</SelectItem>
+                  <SelectItem value="CFO Services">CFO Services</SelectItem>
                 </SelectContent>
               </Select>
               {errors.serviceType && <p className="text-sm text-red-600">{errors.serviceType}</p>}

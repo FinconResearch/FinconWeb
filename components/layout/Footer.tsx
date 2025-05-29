@@ -6,8 +6,9 @@ import Image from 'next/image';
 const quickLinks = [
   { name: 'Home', href: '#' },
   { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/Services/' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Investment Services', href: '/Services/Investment_Services' },
+  { name: 'CFO Services', href: '/Services/CFO_Services' },
+  { name: 'Contact', href: '/#contact-us' }
 ];
 
 const legalLinks = [
@@ -21,8 +22,16 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: Mail, text: 'contact@gmail.com' },
-  { icon: MapPin, text: 'New Delhi' }
+  {
+    icon: Mail,
+    text: 'contact@finconresearch.com',
+    isEmail: true,
+  },
+  {
+    icon: MapPin,
+    text: 'New Delhi',
+    isEmail: false,
+  },
 ];
 
 export function Footer() {
@@ -83,7 +92,16 @@ export function Footer() {
               {contactInfo.map((info, index) => (
                 <li key={index} className="flex items-center space-x-3">
                   <info.icon className="w-5 h-5 text-neon-green" />
-                  <span className="text-gray-400">{info.text}</span>
+                  {info.isEmail ? (
+                    <a
+                      href={`mailto:${info.text}`}
+                      className="text-gray-400 hover:text-neon-green transition-colors underline"
+                    >
+                      {info.text}
+                    </a>
+                  ) : (
+                    <span className="text-gray-400">{info.text}</span>
+                  )}
                 </li>
               ))}
             </ul>

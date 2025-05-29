@@ -173,7 +173,6 @@ export default function OurValues() {
             className="flex"
             style={{
               width: "100%",
-              // Ensure the container is always as wide as one card
             }}
             animate={{ x: `-${activeIndex * 100}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -260,7 +259,7 @@ export default function OurValues() {
                     >
                       <div className="flex items-end">
                         <motion.div
-                          className={`text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r ${prop.color}`}
+                          className={`md:text-5xl text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r ${prop.color}`}
                           animate={{
                             scale: [1, 1.1, 1],
                           }}

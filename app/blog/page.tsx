@@ -25,24 +25,14 @@ export default function BlogPage() {
     },
     {
       id: 2,
-      title: "Optimizing Performance",
+      title: "Global Financial Services M&A and Capital Markets: A FinconResearch Overview",
       excerpt: "aaaaaaaaaaaaaaaaaaa aaaaaaaa aaaaa a a a aaaaaaaaaaaaa.",
       date: "May 5, 2025",
       author: "Sidak",
       category: "Performance",
       readTime: "8 min read",
       image: "/AboutUsimage.jpg",
-      slug: "/blog/optimizing-performance",
-    },
-    {
-      id: 3,
-      title: "Designing",
-      excerpt: "aaaaaaaaaaaaaaaaaaa aaaaaaaa aaaaa a a a aaaaaaaaaaaaa.",
-      date: "April 28, 2025",
-      author: "Sidak",
-      category: "Design",
-      readTime: "6 min read",
-      image: "/AboutUsimage.jpg",
+      slug: "blog/global-financial",
     },
     
   ]

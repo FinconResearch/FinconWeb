@@ -17,6 +17,9 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [phone, setPhone] = useState("")
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
 
   const buttonVariants = {
     idle: { scale: 1 },
@@ -39,16 +42,41 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setIsSuccess(true)
-    setTimeout(() => {
-      setIsSuccess(false)
-      setSelectedService("")
-      setPreferredContact("email")
-      onClose()
-    }, 2000)
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          from_name: fullName,
+          email,
+          phone,
+          serviceType: selectedService,
+          message,
+          preferredContact,
+          to: "contact@finconresearch.com",
+        }),
+      })
+      const result = await response.json()
+      setIsSubmitting(false)
+      if (result.success) {
+        setIsSuccess(true)
+        setTimeout(() => {
+          setIsSuccess(false)
+          setSelectedService("")
+          setPreferredContact("email")
+          setFullName("")
+          setEmail("")
+          setPhone("")
+          setMessage("")
+          onClose()
+        }, 2000)
+      }
+    } catch {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -78,7 +106,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25 }}
-              onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside modal
+              onClick={(e) => e.stopPropagation()}
               style={{
                 maxHeight: "90vh",
                 display: "flex",
@@ -110,6 +138,8 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                       placeholder="Full Name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
+                      value={fullName}
+                      onChange={e => setFullName(e.target.value)}
                     />
                   </div>
 
@@ -124,6 +154,8 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                         placeholder="you@example.com"
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="space-y-2">
@@ -162,8 +194,8 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                       <option value="" disabled>
                         Select service type
                       </option>
-                      <option value="investment">Investment and Research Services </option>
-                      <option value="retirement">CFO Services</option>
+                      <option value="Investment and Research Services">Investment and Research Services </option>
+                      <option value="CFO Services">CFO Services</option>
                     </select>
                   </div>
 
@@ -176,6 +208,8 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                       rows={4}
                       placeholder="Tell us about your financial goals and any specific questions you have..."
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
                     />
                   </div>
 
