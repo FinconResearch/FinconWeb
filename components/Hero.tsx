@@ -66,8 +66,8 @@ export default function Hero() {
               className="w-full hidden lg:block lg:w-1/2 h-[45%] relative"
             >
               <Image
-                src="/stock.webp"
-                alt="AI Voice Agent Illustration"
+                src="/Heroimage.jpg"
+                alt="Hero image"
                 width={1920}
                 height={1080}
                 className="w-full h-full  object-cover object-center rounded-2xl"

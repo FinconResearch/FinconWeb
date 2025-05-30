@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Calendar, User } from "lucide-react"
+import { ArrowRight, Calendar} from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import ContactSection from "../about/components/ContactSection"
@@ -15,10 +15,8 @@ export default function BlogPage() {
     {
       id: 1,
       title: "Empowering Prosperity: The Surge of Women HNWIs in India",
-      excerpt: "aaaaaaaaaaaaaaaaaaa aaaaaaaa aaaaa a a a aaaaaaaaaaaaa..",
       date: "May 12, 2025",
-      author: "Sidak",
-      category: "Technology",
+      category: "FinancialEmpowerment",
       readTime: "5 min read",
       image: "/AboutUsimage.jpg",
       slug: "/blog/empowering-prosperity",
@@ -26,18 +24,14 @@ export default function BlogPage() {
     {
       id: 2,
       title: "Global Financial Services M&A and Capital Markets: A FinconResearch Overview",
-      excerpt: "aaaaaaaaaaaaaaaaaaa aaaaaaaa aaaaa a a a aaaaaaaaaaaaa.",
       date: "May 5, 2025",
-      author: "Sidak",
-      category: "Performance",
+      category: "FinancialServices",
       readTime: "8 min read",
       image: "/AboutUsimage.jpg",
       slug: "blog/global-financial",
     },
-    
   ]
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -111,7 +105,7 @@ export default function BlogPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:p-4 md:p-8 lg:px-32 gap-10"
         >
           {blogPosts.map((post) => (
             <motion.div
@@ -122,9 +116,9 @@ export default function BlogPage() {
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-blue-100 relative"
               whileHover={{ y: -10 }}
             >
-              <div className="relative overflow-hidden h-56">
+              <Link href={post.slug ?? "#"} className="block relative overflow-hidden h-64">
                 <Image
-                  src="/AboutUsimage.jpg"
+                  src={post.image}
                   alt={post.title}
                   fill
                   className="object-cover transition-transform duration-700"
@@ -136,21 +130,18 @@ export default function BlogPage() {
                 <div className="absolute top-4 left-4 bg-blue-50 px-3 py-1 rounded-full text-sm font-medium text-blue-700 shadow-md">
                   {post.category}
                 </div>
-              </div>
+              </Link>
               <div className="p-7">
                 <div className="flex items-center text-sm text-blue-500 mb-3">
                   <Calendar className="h-4 w-4 mr-1" />
                   <span>{post.date}</span>
                   <span className="mx-2">•</span>
-                  <User className="h-4 w-4 mr-1" />
-                  <span>{post.author}</span>
+                  <span className="text-sm text-blue-500 bg-blue-50 px-3 py-1 rounded-full">{post.readTime}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-blue-800 group-hover:text-blue-700 transition-colors duration-200">
                   {post.title}
                 </h3>
-                <p className="text-blue-600 mb-5 line-clamp-3">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-blue-500 bg-blue-50 px-3 py-1 rounded-full">{post.readTime}</span>
                   <motion.div
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -158,7 +149,7 @@ export default function BlogPage() {
                   >
                     <Link
                       href={post.slug ?? "#"}
-                      className="inline-flex items-center text-blue-800 font-medium group-hover:text-blue-700 transition-colors duration-200"
+                      className="inline-flex items-center mb-8 text-blue-800 font-medium group-hover:text-blue-700 transition-colors duration-200"
                     >
                       Read More
                       <ArrowRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" />
@@ -176,11 +167,8 @@ export default function BlogPage() {
           ))}
         </motion.div>
       </motion.div>
-      
-      
-      <ContactSection/>
-      <Footer/>
-      
+      <ContactSection />
+      <Footer />
     </div>
   )
 }

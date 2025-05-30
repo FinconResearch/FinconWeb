@@ -1,9 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, Clock, Tag, Share2 } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import ContactSection from "@/app/about/components/ContactSection"
 import { Footer } from "@/components/layout/Footer"
 
@@ -49,12 +48,9 @@ export default function BlogPost({ params }: { params: { id: string } }) {
 
     `,
     date: "May 12, 2025",
-    author: "Sidak",
-    category: "Technology",
+    category: "FinancialServices",
     readTime: "5 min read",
-
-    authorImage: "/placeholder.svg?height=100&width=100",
-    tags: ["Web Development", "Future Tech", "JavaScript", "React"],
+    tags: ["FinancialServices", "CapitalMarkets", "MergersAndAcquisitions", "FinancialInsights", "SectorOutlook"],
   }
 
   return (
@@ -92,17 +88,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-blue-800 leading-tight">{post.title}</h1>
 
           <div className="flex items-center mb-10 border-b border-blue-100 pb-8">
-            <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-blue-200">
-              <Image
-                src={post.authorImage || "/placeholder.svg"}
-                alt={post.author}
-                width={48}
-                height={48}
-                className="object-cover"
-              />
-            </div>
             <div className="flex-1">
-              <div className="font-medium text-blue-800 text-lg">{post.author}</div>
               <div className="flex items-center text-sm text-blue-500">
                 <Calendar className="h-3 w-3 mr-1" />
                 <span>{post.date}</span>
@@ -110,15 +96,6 @@ export default function BlogPost({ params }: { params: { id: string } }) {
                 <Clock className="h-3 w-3 mr-1" />
                 <span>{post.readTime}</span>
               </div>
-            </div>
-            <div className="flex space-x-2">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
-              >
-                <Share2 className="h-4 w-4" />
-              </motion.button>
             </div>
           </div>
         </motion.div>

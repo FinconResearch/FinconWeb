@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { ArrowLeft, Calendar, Clock, Tag, } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import ContactSection from "@/app/about/components/ContactSection"
 import { Footer } from "@/components/layout/Footer"
 
@@ -12,11 +11,9 @@ export default function BlogPost({ params }: { params?: { id: string } }) {
     id: params?.id || "sample-post",
     title: "Empowering Prosperity: The Surge of Women HNWIs in India",
     date: "May 12, 2025",
-    author: "Sidak",
     category: "Wealth & Society",
     readTime: "5 min read",
-    authorImage: "/placeholder.svg?height=100&width=100",
-    tags: ["Women HNWIs", "India Wealth", "Entrepreneurship", "Financial Inclusion"],
+    tags: ["WomenInWealth", "FinancialEmpowerment", "IndiaGrowthStory", "WealthCreation"],
   }
 
 
@@ -55,17 +52,7 @@ export default function BlogPost({ params }: { params?: { id: string } }) {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-blue-800 leading-tight">{post.title}</h1>
 
           <div className="flex items-center mb-10 border-b border-blue-100 pb-8">
-            <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-blue-200">
-              <Image
-                src={post.authorImage || "/placeholder.svg"}
-                alt={post.author}
-                width={48}
-                height={48}
-                className="object-cover"
-              />
-            </div>
             <div className="flex-1">
-              <div className="font-medium text-blue-800 text-lg">{post.author}</div>
               <div className="flex items-center text-sm text-blue-500">
                 <Calendar className="h-3 w-3 mr-1" />
                 <span>{post.date}</span>
@@ -272,19 +259,6 @@ export default function BlogPost({ params }: { params?: { id: string } }) {
                   {tag}
                 </motion.span>
               ))}
-            </div>
-          </div>
-
-          <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-10 rounded-2xl shadow-sm">
-            <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-bold text-blue-800">Enjoyed this article?</h3>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-shadow"
-              >
-                Share Article
-              </motion.button>
             </div>
           </div>
         </motion.div>

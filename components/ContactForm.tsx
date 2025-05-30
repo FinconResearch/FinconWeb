@@ -184,7 +184,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              Schedule Your Financial Consultation
+              Let’s Talk
             </motion.h1>
             <motion.p
               className="text-gray-600 text-lg"
@@ -192,7 +192,9 @@ export default function ContactPage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum, magna a tincidunt dignissim, risus odio viverra eros, a.
+              
+              Looking for reliable research support to accelerate your deal pipeline or deepen your market insights.
+
             </motion.p>
           </div>
 
@@ -208,7 +210,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Confidential & Secure</h3>
-                <p className="text-gray-600">Your information is protected with bank-level security.</p>
+                <p className="text-gray-600">Your information is handled with strict confidentiality and enterprise-grade security.</p>
               </div>
             </div>
 
@@ -218,7 +220,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Flexible Scheduling</h3>
-                <p className="text-gray-600">Choose a consultation time that works for your schedule.</p>
+                <p className="text-gray-600">Work with us on-demand or retain our team as an extension of yours.</p>
               </div>
             </div>
           </motion.div>
