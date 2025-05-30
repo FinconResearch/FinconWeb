@@ -121,7 +121,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                 >
                   <X size={20} />
                 </button>
-                <h2 className="text-2xl font-bold text-white">Request a Consultation</h2>
+                <h2 className="text-2xl font-bold text-white">Get in Touch</h2>
                 <p className="text-blue-100 mt-1">Fill out the form below and we&apos;ll contact you shortly</p>
               </div>
 
@@ -248,7 +248,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                       <span className="flex items-center">Request Submitted</span>
                     ) : (
                       <>
-                        Request Consultation
+                        Submit
                         <svg
                           className="ml-2 w-5 h-5"
                           fill="none"
