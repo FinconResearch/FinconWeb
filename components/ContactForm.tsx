@@ -233,7 +233,7 @@ export default function ContactPage() {
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <div className="bg-gradient-to-r bg-blue-700 p-6">
-            <h2 className="text-xl font-semibold text-white">Get in Touch .</h2>
+            <h2 className="text-xl font-semibold text-white">Get in Touch</h2>
             <p className="text-blue-100 text-sm mt-1">Fill out the form below and we&apos;ll contact you shortly</p>
           </div>
 
