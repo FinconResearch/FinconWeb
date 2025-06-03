@@ -18,7 +18,7 @@ export default function BlogPage() {
       date: "May 12, 2025",
       category: "FinancialEmpowerment",
       readTime: "5 min read",
-      image: "/AboutUsimage.jpg",
+      image: "/WomenBlog.jpg",
       slug: "/blog/empowering-prosperity",
     },
     {
@@ -27,7 +27,7 @@ export default function BlogPage() {
       date: "May 5, 2025",
       category: "FinancialServices",
       readTime: "8 min read",
-      image: "/AboutUsimage.jpg",
+      image: "/GlobalBlog.jpg",
       slug: "blog/global-financial",
     },
   ]
